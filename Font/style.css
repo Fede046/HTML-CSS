@@ -1,18 +1,49 @@
+/*Importo un font locale ->
+@font-face ->permette di definire un nome per un carattere 
+personalizzato e di specificare il percorso del file del font
+da caricare*/
+/*Nota -> Questo non va a intaccare il file HTML*/
+
+@font-face {
+    font-family: Oswald;
+    src: url(fonts/Oswald-VariableFont_wght.ttf);
+}
+
 /*
 Differenza tra Serif e Sann-Serif ->
 I caratteri 'Serif' sono dotati di piccole grazie (trattini terminali) alla fine di ogni lettera.
 I caratteri 'Sans-serif' sono privi di grazie, questo tipo di carattere
 sono generalemente considerati più leggibili su schemi e cellulari.
 */
+
+h1{
 /*Font di Fallbak -> Poichè non tutti i browaer supportano gli stessi tipi 
 di carattere, è buona norma specificare dei font di riserva (fallback).
 Dichiarando più di un carattere nella proprietà font-family, il browaer tenterà di utilizzare 
 il primo della lista; se non disponibile proverà con il secondo...*/
-h1{
-    font-family: Verdana, arial;
+    font-family: verdana,arial;
 }
-/*Se il font contiene degli sapzi si può inserire tra virgolette*/
+
+
 p{
-    font-family: "lucida console",'Courier New';
+/*Se il font contiene degli sapzi si può inserire tra virgolette*/
+    font-family: Lato,"lucida console",'Courier New';
+/*Unità di misura per la dimensione dei font ->
+.Pixel(px) -> Unità di misura assoluta
+.Em -> unità di misura relativa, dove 1em corrisponde alla dimensione di default
+    del carattere (16px). Di conseguenza, 1.5 equivale al 150% della dimensione
+    di base. (0.5 50%)
+*/
     font-size: 14px;
+/*font-weight -> controlla lo spessore del carattere (normal, bold)*/
+    font-weight: bold;
+/*font-style -> definisce lo stile del carattere (normal, italic)*/
+    font-style: italic;
+/*Google Fonts -> Offre una vasta libreria di caratteri, per utilizzarli è necessario
+includere un apposito link al foglio di stile di google nella sezione <head> nell'HTML.*/
+}
+
+#p2{
+    font-family: Oswald,arial;
+    color: brown;
 }
