@@ -1,0 +1,41 @@
+/*display è possibile modificare il comportamento di qualsiasi elemento.*/
+
+#div1{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+/*l'elemento viene visulizzato come in line*/
+    display: inline;
+}
+span{
+    background-color: rgb(122, 122, 219);
+    width: 100px;
+    height: 100px;
+/*l'elemento viene visualizzato come blocco*/
+    display: block;
+}
+#div2{
+    background-color: rgb(116, 220, 228);
+    width: 100px;
+    height: 100px;
+/*L'elemento viene visualizzato in linea ma si comporta come un blocco.
+Elementi successivi si allineano sulla riga*/
+    display: inline-block;
+}
+#div3{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+/*Rimuove l'elemento dal documento, è come se non foosse mai esistito,
+gli elementi successivi prendono il suo posto.*/
+    display: none;
+}
+/*visability: hidden->L'elemento è nascosto, ma continua a occupare 
+lo spazio nel lyout come se fosse ancora li.*/ 
+#div4{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+/*l'elemento viene visulizzato come in line*/
+    visibility: hidden;
+}

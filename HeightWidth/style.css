@@ -1,0 +1,61 @@
+
+/*L'uso del broder box viene spesso usato per tutti gli elementi*/
+*{
+       box-sizing: border-box; 
+}
+
+.container{
+    background-color: rgb(146, 117, 117);
+/*vh -> (Viewport Height) indica l'altezza del viewport*/
+/*height: 100vh -> Imposterà l'altezza dell'elemento al 100% dellaltezza 
+visibile del browser, indipendentemente dal contenuto*/
+    height: 100vh;
+/*Nota se il container è vuoto o contiene solo elementi floated, 
+la sua altezza diventa 0. Il background-color non visibile.
+Gli elementi floated escono dal normal flow del documento*/
+}
+
+
+
+.box{
+    background-color: tomato;
+    border: 2px solid;
+/*Height e Width -> è possibile definire le dimensioni di un elemento.
+.auto -> Valore predefinito, la dimensione viene calcolata automaticamente
+        in base al contenuto. 
+        (Gli elementi a livello di blocco occupano il 100% della larghezza 
+        del contenitore genitore).
+.100px -> (Valori Espliciti) è possibile definire dimensioni fisse per un 
+        elemento (con 300px / 50% del viewport o del genitore)
+
+IMPORTANTE: Di default, width e height si riferiscono solo all'area del 
+contenuto. Padding e border si aggiungono a queste dimensioni.
+SOLUZIONE -> box-sizing: border-box -> width e height includono 
+automaticamente padding e border */
+    height: auto;
+    width:200px;
+/*Il padding è lo spazio tra il contenuto di un elemento e il suo bordo*/
+    padding: 25px;
+    float: left;
+/*Con border-box: le dimensioni totali saranno esattamente 200px × 200px
+includendo già padding e border*/
+    box-sizing: border-box;
+/*text-align -> allinea orizzontalmente il testo rispetto al suo contenitore
+.center -> allinea al centro
+.left -> allinea a sinistra (default)
+.right -> allinea a destra
+.justify -> giustifica il testo
+*/
+    text-align: center;
+/*LARGHEZZA MASSIMA*/
+/*Imposta la larghezza massima che un elemento può raggiungere.
+Se la larghezza specificata (width: 90%) supera il max-width, verrà
+utilizzato il valore massimo*/ 
+    max-width: 75%;
+/*LARGHEZZA MINIMA*/
+/*Imposta la larghezza minima sotto la quale l'elemento non può scendere*/
+    min-width: 25%;
+/*analogo concetto per la lughezza*/
+    max-height: 30%;
+    min-height: 10%;
+}
