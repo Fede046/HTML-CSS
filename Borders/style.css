@@ -1,0 +1,40 @@
+h1{ 
+    /*Un bordo in CSS è una linea che circonda il contenutco a il padding di un elemento.*/
+/*border-style -> Definisce lo stile della linea del bordo. Opzioni ->
+    .solid: Una linea continua
+    .dashed: Linee tratteggiate 
+    .dotted: Punti
+    .double: Un doppio bordo
+    .groove: Un bordo scavato tridimensionale
+    .ridge: Un bordo in rilevo tridimensionale
+    .inset: Un bordo che simula un elemento incassato
+    .outset: Un bordo che simula un elemento in rilievo
+    .none: Nessun bordo   
+*/
+    border-style: solid;
+
+/*border-width -> Imposta lo spessore del bordo. Il valore predefinito è 1 pixel*/
+    border-width: 3px;
+
+/*border-color -> Determina il colore del bordo*/
+    border-color: brown;
+
+/*border-radius -> Arrotonda gli angoli del bordo. Maggiore è il valore in pixel, più saranno arrotondati
+gli angoli. Il valore massimo è 20px*/
+    border-radius: 20px;
+
+}
+
+h2{
+    /*Sintassi Shorthand -> sitassi breve -> border: [width] [style] [color];*/
+    border: 3px solid cornflowerblue;
+    border-radius: 20px;
+}
+
+p{
+    /*Bordi Direzionali -> brorder-(bottom/top/left/right)*/
+    border-bottom: 3px solid red;
+    border-top: 3px solid blue;
+    border-left: 3px dotted green;
+    border-right: 3px dashed pink;
+}
