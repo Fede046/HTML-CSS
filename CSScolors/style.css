@@ -1,0 +1,36 @@
+/*name color*/
+body{
+    background-color: slategray;
+}
+#p1{
+    color:tomato;
+}
+
+/*RGB values*/
+/*rgb(rosso, verde, blu) Ogni colore va da 0 a 255, 0 assenza del colore,
+255 massima intensità*/
+#p2{
+    color:rgb(205, 208, 233);
+}
+
+/*HEX color*/
+/*#RRGGBB 
+RR -> red
+GG -> green
+BB -> blue
+Utilizza un sitema esadecimale per rappresentare la gradualità dei colori
+Usa numeri 0-9 e lettere a-f. 00 = minimo(0) e ff = massimo(255)*/
+#p3{
+    color: #ffff00;
+}
+
+/*HSL color*/
+/*Hue, Saturation, Lightness (Tonalità, Saturazione, Luminosità) 
+   ed è un metodo per specificare i colori. La Tonalità è un valore da 
+   0 a 360 gradi sulla ruota dei colori (dove 0 è il rosso, 
+   120 il verde e 240 il blu). La Saturazione e la Luminosità 
+   sono espresse in percentuale, dove la saturazione determina 
+   l'intensità del colore e la luminosità la sua brillantezza. */
+#p4{
+    color:hsl(306, 61%, 79%);
+}

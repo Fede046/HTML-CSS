@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Il tag meta è un elemento HTML che formisce metadati, ovvero infoormazioni aggiuntive sulla 
+         pagina web
+         Ha queste caratteristiche:"
+         . non è visibile agli utenti della pagina
+         . Si trova sempre nella sezione head
+         . Non ha tag di chiusura
+         . Fornisce informazioni al browser e ai motori di ricerca"-->
+        <!-- Definisco la codifica dei caratteri-->
+        <meta charset="UTF-8">
+        <!-- Forza Internet explore a usare il motore di rendering più moderno
+         IE sta per internet explorer.
+         Il motore di rendering interpreta 
+         informazioni in ingresso codificate secondo uno specifico formato e 
+         le elabora con una rappresentazione grafica-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- width=device-width : fa adattare il sito alla
+         larghezza del disposirivo 
+         initial-scale=1.0 : imposta lo zoom iniziale al 100%
+         Senza questi tag, i siti su cellulare si aprirebbero zoommati-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>On the Flip</p>
+        <audio controls autplay muted loop>
+            <!-- Il browser può scaricare subito il formato che supporta meglio
+             evita di scaricare formati incompatibili, e sceglie il formato
+             con migliore compressione-->
+            <source src="music/On The Flip - The Grey Room _ Density & Time.mp3" type="audio/mpeg">
+            <source src="music/On The Flip - The Grey Room _ Density & Time.wav" type="audio/wav">
+        </audio>
+        <br>
+        <p> By Myself</p>
+        <audio controls>
+            <source src="music/By Myself - The Grey Room _ Clark Sims.mp3">
+        </audio>
+        <br>
+        <p> Resolution Or Reflection</p>
+        <audio controls>
+            <source src="music/Resolution Or Reflection - The Grey Room _ Clark Sims.mp3">
+        </audio>
+
+    </body>
+</html>

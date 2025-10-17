@@ -1,0 +1,29 @@
+/*lo stesso css style può essere applicato su più pagine html*/
+body{
+    background-color: black;
+}
+h1{
+    color: greenyellow;
+}
+/*Per specificare l'id di un elemento dell'html metto il # all'inizio*/
+#p1{
+    color: yellow;
+}
+#p2{
+    color: orange;
+}
+#p3{
+    color: violet;
+}
+#p4{
+    color: mediumspringgreen;
+}
+/*per modificare tutti gli elementi di una classe selezione la calsse con .class*/
+.odd{
+    text-decoration: underline;
+    text-decoration-color: chartreuse;
+}
+.even{
+    text-decoration: underline;
+    text-decoration-color: blue;
+}

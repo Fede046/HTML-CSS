@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="'viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!--Inizio di un area in una pagina web dove l'utente può inserire dati 
+        come testo, selezionare opzioni, caricare file, ecc) e poi inviarli a un server per essere 
+        elaborati-->
+
+        <!-- L'attributo action specifica dove devono essere inviati i dati raccolti dal modulo-->
+        <!-- I dati in questo caso verranno inviati a un file. Il file è uno script lato server. Questo script
+         riceverà i dati, li elaborerà e di solito restituisce una nuova pagina-->
+
+        <!-- L'attributo method specifica come i dati devono essere inviati al server-->
+        <!-- POST : I dati del modulo vengono nascosti all'interno del corpo della richiesta HTTP, ideale per dati sensibili,
+         dati che modificano qualcosa sul server, grandi quantità di dati. Si rifà penso al metodo post di HTTP-->
+
+        <!-- GET : I dati vengono allegati all'URL della pagina. È utile per ricerche, filtri o quando si vuole che l'URL 
+         sia condivisibile, ma non i dati sensibili. Si rifà penso al metodo GET di HTTP.-->
+
+        <!--L'attributo enctype è Essenziale quando di inviano file. Questo attributo definisce come i dati del 
+        forum vengano codificati prima di essere inviati al server. 
+        Senza enctype: I dati vengono codificati semplicemente come testo, il file non viene inviato viene inviato solo
+        il nome del file, non si può caricare il contenuto
+        Con enctype="multipart/form-data": I dati vengono codificati in parti multiple (multipart), il contenuto effettivo
+        del file viene inviato al server. Invia dati binari di file-->
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            
+
+
+            <!--Parte casella di testo per l'username-->
+            <!--l'attributo for crea un'associazione esplicita tra l'etichetta Password e il campo di input corrispondente
+            for="password" in questoo caso "password" fa riferimento all'attributo id del campo input a cui questa etichetta è collegata-->
+            <label for="usarname">Username:</label>
+            <!--required: dice che prima di inviare (ovvero fare il submit) bisogna scrivere l'username-->
+            <!--placeholder: indica la scritta sfumata all'interno di una casella di testo-->
+            <input type="text" id="usarname" placeholder="Spongebob" minlength="6" maxlength="15" required>
+            
+            <!--Parte casella di testo per la password-->
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" >
+
+            <!--Parte di casella di testo per l'email-->
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="test@gmail.com"> 
+
+            <!--Parte casella di testo per il numero di cellulare-->
+            <br>
+            <label for="phone">Phone #:</label>
+            <!--Il pattern definisce un'espressione regolare che il valore inserito dall'utente deve rispettare 
+            per essere coonsiderato valido. In caso di formato non valido invia un messaggio di errore di formato-->
+            <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+            <!-- Parte di selezione del giorno del compleanno-->
+            <br>
+            <label for="bday">Birthdate:</label>
+            <input type="date" id="bday">
+
+
+            <!--Quantity-->
+            <br>
+            <label  for="quantity">Quantity:</label>
+            <!--Value sta per valore di base-->
+            <input type="number" id=quantity min="0" max="99" value="1">  
+
+
+            <!--Gestione titolo della persona (attraverso una selezione di punti)-->
+            <br>
+            <label for="title">Title:</label>
+
+            <label for="Mr.">Mr.</label>
+            <!--Aggiungiamo un anme attribute per metterli nello stesso gruppo-->
+            <input type="radio" id="Mr." value="Mr." name="title">
+            <label for="Ms.">Ms.</label>
+            <input type="radio" id="Ms." value="Ms."name="title">
+            <label for="PhD.">PhD.</label>
+            <input type="radio" id="PhD." value="PhD."name="title">
+
+
+            <!--Drop down (utilizzato per i pagamenti) (selezione di elementi a tendina)-->
+            <br>
+            <label for="payment">Payment:</label>
+            <select id="payment">
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="giftcard">giftcard</option>
+            </select>
+
+
+            <!--Checkbox-->
+            <br>
+            <label for="subscribe">Subscribe: </label>
+            <input type="checkbox" id="subscribe"> 
+
+            <!--Text area per i commenti-->
+            <br>
+            <label for="comment">Comment</label>
+            <textarea id="comment" row="3" cols="25"></textarea>
+
+
+            <!--FIle upload-->
+            <!--Apre una finistra cartella che ti fa scegliere il file dal tuo dispositivo-->
+            <br>
+            <label for="file">File:</label>
+            <!--accept serve per mettere un vincolo al tipo di file che si pùo selezionare tra quelli del dispositivo
+            in autmatico mette tutti i tipi di file-->
+            <input type="file" id="file" accept="image/png, image/jpg">
+
+
+            <!--Bottone reimposta-->
+            <br>
+            <input type="reset">
+            <br>
+            <!--Bottone invia-->
+            <input type="submit">
+
+        </form>
+
+
+
+
+    </body>
+
+
+</html>

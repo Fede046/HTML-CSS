@@ -1,0 +1,18 @@
+/*
+Differenza tra Serif e Sann-Serif ->
+I caratteri 'Serif' sono dotati di piccole grazie (trattini terminali) alla fine di ogni lettera.
+I caratteri 'Sans-serif' sono privi di grazie, questo tipo di carattere
+sono generalemente considerati più leggibili su schemi e cellulari.
+*/
+/*Font di Fallbak -> Poichè non tutti i browaer supportano gli stessi tipi 
+di carattere, è buona norma specificare dei font di riserva (fallback).
+Dichiarando più di un carattere nella proprietà font-family, il browaer tenterà di utilizzare 
+il primo della lista; se non disponibile proverà con il secondo...*/
+h1{
+    font-family: Verdana, arial;
+}
+/*Se il font contiene degli sapzi si può inserire tra virgolette*/
+p{
+    font-family: "lucida console",'Courier New';
+    font-size: 14px;
+}

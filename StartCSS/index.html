@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Document</title>
+        <!--Questo serve per l'internal CSS-->
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color:red
+            }
+            p{
+                color: red;
+            }
+        </style>
+        <!--Uso il tag link per applicare il CSS Esternamente-->
+        <!--rel : sta per relationship, in questoo caso la relazione indica che
+        style.css ha una relazione di foglio di stile con questo HTML, lo avevo giù usato per 
+        l'icona in piccolo del sito-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <!--CSS (Cascading,Style,Sheets), è un linguaggio per descrivere la presentazione di 
+    un documentoo scritto in un linguaggio di markup come l'HTML.
+    Il CSS serve a definire l'aspetto esteticoo di una pagina web, come colori, caratteri e lyout-->
+    <body style="background-color: black;">
+        <!--Esistono 3 diversi modi per applicare il CSS in un HTML-->
+        <!--Inline, internal, External-->
+
+        <!--Inline-->
+        <!--Si inserisce lo stile direttamente all'interno di un tag HTML, utilizzando
+        l'attributo style. Questo metodo è utile per applicare unoo stile a un singolo elemento,
+        ma può rendere il codice meno leggibile.-->
+        <h1 style="color: white;">This is my website</h1>
+        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <hr style="color: white;">
+
+        <!--Internal-->
+        <!--Si aggiunge il tag <style> all'interno dell'head e si fa il css li.
+        Bisogna specificare i tipi da applicare il css-->
+        <h1 >This is my website</h1>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <hr>
+        
+        <!--External (il più utilizzato)-->
+        <!--Si crea un file separato con estensione .css che contiene tutte le 
+        regole di stile. Questo file viene poi collegato al documento HTML tramite il tag
+        <link> nella sezione <head>. È molto utilizzato perchè consente di separeare la 
+        struttura HTMl dalla presentazione CSS, rendendo il codice più organizzato-->
+        <h1 >This is my website</h1>
+        <!--Inserisco degl ID per specificare con precisione lo style dell'elemento-->
+        <p id="p1" class="odd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p id="p2" class="even">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p id="p3" class="odd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <p id="p4" class="even">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est inventore ducimus reprehenderit, ea ab corrupti. Dolorem voluptates officiis, dignissimos quasi inventore sequi sunt eum ratione quo ipsa minima praesentium.</p>
+        <hr>
+    </body>
+</html>
