@@ -1,0 +1,16 @@
+/*Le proprietà CSS text-shadow e box-shadow permettono di aggiugere 
+effetti testuali e non testuali.*/
+/*[Offset orizzontale] [Offset Varticale] [Raggo di sfuocatura] [colore]*/
+
+
+h1{
+    /*è possibile aggiungere più oble allo stesso testo*/
+    text-shadow: 4px -10px 4px red,42px 2px 5px gray;
+}
+
+#box1{
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    box-shadow: 3px 3px 5px;
+}

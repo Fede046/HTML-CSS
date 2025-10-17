@@ -1,0 +1,41 @@
+#d1{
+    font-size:large;
+    border: 2px solid;
+    height: 75px;
+    /*visible -> (valore di default)Permette al contenuto di traboccare all'esterno del box*/
+    overflow: visible;
+}
+#d2{
+    font-size:large;
+    border: 2px solid;
+    height: 75px;
+    /*hidden -> Nasconde qualsiasi contenuto che trabocca oltre i confini del box.
+    Nota: Anche se è invisibile il testo nascosto può ancora essere selezionato e copiato.*/
+    overflow: hidden;
+}
+#d3{
+    font-size:large;
+    border: 2px solid;
+    height: 75px;
+    /*clip -> (simile a hidden) Il contenuto in eccesso viene tagliato, senza fornire barre 
+    di scorrimento. Utilizzato insieme a (overflow-clip-margin) definisce quanto il 
+    contenuto può traboccare prima di essere tagliato*/
+    overflow: clip;
+    overflow-clip-margin: 13px;
+}
+#d4{
+    font-size:large;
+    border: 2px solid;
+    height: 75px;
+    /*scroll -> Fornisce una barra di scorrimento verticale e orizzontale anche se non necessaria,
+    se il coontenutoo non è sufficiente, la barra di scorrimento apparirà comunque, ma disabilitata,*/
+    overflow: scroll;
+}
+#d5{
+    font-size:large;
+    border: 2px solid;
+    height: 75px;
+    /*auto -> Visulaizza le barre di scorrimento solo se necessarie, se il contenuto non trabocca
+    le barre non saranno visualizzate. (il + pulito per gestire overflow)*/
+    overflow: auto;
+}

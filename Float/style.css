@@ -1,0 +1,23 @@
+body{
+    border: 3px solid;
+    /*Quando si utilizza float, gli elementi flottanti talvolta possono traboccare (overflow)
+    all'esterno del loro contenitore (es. body/div).
+    Soluzione!! -> display: flow-root -> assicura che gli elementi flottanti rimangano all'
+    interno del loro contenitore.*/
+    display: flow-root;
+}
+
+
+#img1{
+    /*Con float: left -> l'elemento viene spostatoo sul lato sx del contenitore, e gli 
+    elementi successivi (come il testo del paragrafo) si avvolgono attorno al lato dx 
+    dell'elemento flottante.
+    (float: rigth -> stessa cosa ma l'elemento viene spostato sul lato dx, elementi si 
+    avvolgeranno sul lato sx)*/
+    float: left;
+    /*Margine dell'elemento*/
+    margin-right: 10px;
+}
+#img2{
+    float: right;
+}

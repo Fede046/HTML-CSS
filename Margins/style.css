@@ -1,0 +1,29 @@
+/*I margini in CSS rappresentano lo spazio attorno a un elemento*/
+/* Se si fa ispeziona pagina si può vedere la box model.
+Nel contesto del Box Model di CSS (Elemento,Padding,Bordo,Margine)
+I margini sono l'area esterna a qualsiasi bordo dell'elemento stesso.
+*/
+body{
+    margin: 0px;
+}
+.box{
+    border:5px solid;
+    font-size: 5em;
+    width: 250px;
+    height: 250px;
+}
+#box1{
+    background-color: red;
+    /*Proprietà Shorthand -> oppure si può fare direttamente margin:50px 
+    (se si vuol fare in tutte le direzioni)*/
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#box2{
+    background-color: aqua;
+    /*Il valore auto per la proprità margin permette al margine di occupare il 
+    massimo spazio possibile. (Spingere tutto a dx oppure impostare al centro)*/
+    margin-left: auto;
+}
