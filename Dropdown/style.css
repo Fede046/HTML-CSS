@@ -1,0 +1,39 @@
+.dropdown{
+    /*combina la caratteristica degli elemnti inline che block*/
+    display: inline-block;
+}
+
+.dropdown button{
+    background-color: rgb(206, 206, 206);
+    color:white;
+    padding:10px 15px;
+    border: none;
+/*quando mette il cursore sul bottone cambia il cursore in mano*/
+    cursor: pointer;
+}
+
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdown .content{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px black ;
+}
+
+.dropdown:hover .content{
+    display: block;
+}
+
+.dropdown:hover button{
+    background-color: antiquewhite;
+}
+.dropdown a:hover{
+    background-color: grey;
+}
