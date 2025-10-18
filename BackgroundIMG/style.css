@@ -1,0 +1,15 @@
+body{
+    /*Se l'immagine inserita è grande occupaerà tutta la 
+    finestra. 
+    Se l'immagine inserita è piccola verrà ripetuta fino a coprire
+    tutta la finestra*/ 
+    background-image: url(notte.png) ;
+    /*per evitare ripetizoni uso background-repeat: no-repeat*/
+    background-repeat: no-repeat;
+    /*posiziona l'immagine */
+    background-position: center;
+    /*aggiusta anche in caso di riadattamento della finestra*/
+    background-attachment: fixed;
+    /*per coprire tutta la finestra*/
+    background-size: cover;
+}

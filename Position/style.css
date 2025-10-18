@@ -1,0 +1,62 @@
+#box1{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+/*relative -> Posiziona un elemento relativamente a dove dovrebbe essere normalemnte
+nel flusso del documento*/
+/*Utilizzo proprietà di offset come -> top/bottom/left/right.
+L'elemento viene spostato dalla sua posizione originale*/
+    position: relative;
+    top:100px;
+/*Se px negtivi si va dalla parte opposta*/
+    left: 50px;
+}
+
+#box2{
+    width: 100px;
+    height: 100px;
+    background-color: violet;
+/*absolute -> Posiziona un elemento relativamente al suoo antenato più vicino, non ha una posizione
+impostata l'elemento continua a cercare fino a quando non trova un antenato con una poszione 
+diversa da static*/
+    position: absolute;
+    top:50px;
+    left:50px;
+}
+
+
+#box3{
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+/*fixed -> Posiziona un elemnto relativamente alla viewport (la finestra del browser)*/
+/*L'elemento rimane bloccato in quella posizione anche quando l'utente scorre la pagina.*/ 
+    position:fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+#box4{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+/*sticky -> Posiziona un elemento in base alla posizione di scorrimento*/
+/*Si comporata come relative, finchè la poszione di scorrimento non raggiunge una soglia 
+specifica (definita da top,bottom, left o right) a quel punto l'elemento diventa 
+appiccicoso e si comporta come fixed*/
+/*utile per intestazioni*/
+    position: sticky;
+    top:110px;
+}
+
+#box5{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+/*static -> posizione predefinita (default) di ogni elemento HTML*/
+/*L'elemento viene posizionato secondoo il normale flusso del documento. 
+Le proprietà (top/bottom/left/right) sono ignorate*/
+    position: static;
+    top: 400px;
+}
