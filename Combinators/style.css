@@ -1,0 +1,29 @@
+/*Combinaotri -> I combinatori sono caratteri speciali che spiegano la relazione tra
+i selettori elencati in una regola CSS.*/
+
+#container{
+    border: 2px solid;
+
+}
+/*Discendente -> Seleziona tutti gli elementi del secondo selettore
+che sono discendenti del primo selettore,a qualsiasi livello di annidamento.*/
+#container p{
+    background-color: greenyellow;
+}
+/*Figlio -> Sleziona solo gli elementi che seno fligli diretti (immediati) del 
+primo selettore.*/
+#container > p{
+    background-color: violet;
+}
+
+/*Fratello Generale -> Seleziona tutti gli elementi che sono fratelli del primo 
+selettore e che lo seguono nel codice HTML. (Non include i figli dei fratelli)*/
+#container ~ p{
+        background-color: wheat;
+}
+
+/*Fratello Adiacente -> Seleziona solo l'elemento immediatamente successivo che è un 
+fratello del primo del primo selettore. (Non include i figli dei fratelli)*/
+#container + p{
+        background-color: tomato;
+}

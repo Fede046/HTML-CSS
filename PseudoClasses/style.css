@@ -1,0 +1,63 @@
+/*Una pseudo-classe-> parola chiave aggiunta a un selettore (tramite il segno di due punti)
+che permette di applicare stili a un elemento quando si trova in un determinato stato speciale
+o rispetta una certa condzione. */
+a{
+    font-size: 2em;
+}
+/*link -> Applica stili a un elemento <a> che non è stato ancora visitato*/
+a:link{
+    color: rgb(229, 179, 78);
+}
+/*hover -> Applica stili quando il cursore del mouse si trova sopra l'elemento*/
+a:hover{
+    color:brown;
+    font-size: 2.5em;
+}
+/*active -> applica stili quando l'elemento è attualemente selezionato. Cioè quando
+il pulsante del mouse viene premuto e tenuto premuto sull'elemento*/
+a:active{
+    font-size:2.5em ;
+    color: orange;
+}
+/*visited -> applica stili a un elemento <a> dopo che l'utente ha già visitato
+l'URL di destinazione.*/
+a:visited{
+    color:green;
+}
+
+/*-------------------------------------------------*/
+
+li{
+    font-size: 2em;
+}
+
+li:hover{
+    background-color: yellowgreen;
+}
+/*not -> La pseudo classe seleziona tutto ciò che non è nel suo stato. 
+Permette di applicare stili a elementi che non soddisfano una condizione specificata 
+tra parentesi*/
+li:not(:hover){
+    background-color: burlywood;
+}
+
+/*nth-child() -> pseudo classe funzionale che seleziona un elemento in base alla sua poszione
+tra un gruppo di elementi fratelli (1,2,3,../even/odd/3n(sta per multiplo di 3)/3n+1)*/
+li:nth-child(3n){
+    background-color: aqua;
+}
+
+/*----------------------------------------------*/
+
+#greeting{
+    font-size: 2em;
+}
+#greeting p{
+    background-color: blueviolet;
+    padding: 10px;
+    display: none;
+}
+/*La pseudo classe permette di modificare vaolori del CSS dell'elemento*/
+#greeting:hover p{
+    display: block;
+}

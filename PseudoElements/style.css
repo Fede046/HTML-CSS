@@ -1,0 +1,34 @@
+/*Pseudo elementi -> sono parole chiave che vengono aggiunte a un selettore
+per applicare stili a una parte specifica di un elemento che altrimenti non potrebbe essere
+selezionata tramite i normali selettori*/
+h1::first-letter{
+    font-size: 2em;
+    font-style: italic;
+}
+/*first-line -> varia in base alla dimensione della finestra*/
+p::first-line{
+    background-color: yellow;
+}
+/*Selezione di un testo con il cursore*/
+p::selection{
+    color: skyblue;
+    background-color: darkblue;
+}
+#fruit li::before{
+    /*con win+. si apre una tendina con tutte le emoji*/
+    content: "✅";
+}
+#apple::after{
+    content: "🍎";
+}
+#banana::after{
+    content: "🍌";
+}
+#orange::after{
+    content: "🍊";
+}
+/*Al posto del pallino normale*/
+#fruit li::marker{
+    content: "*";
+    color: rebeccapurple;
+}
