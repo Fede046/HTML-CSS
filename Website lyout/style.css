@@ -1,0 +1,61 @@
+*{
+    /*Proprietà che permette di includere il margin e il bordo
+    nel calcolo del width*/
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+}
+
+
+header{
+    background-color: gainsboro;
+    text-align: center;
+    padding: 25px;
+    
+}
+
+.navbar{
+    background-color: black;
+    height: 50px;
+}
+
+aside{
+    width: 20%;
+    float:left;
+    padding: 10px;
+}
+section{
+    width: 40%;
+    float:left;
+    padding: 10px;
+
+}
+article{
+    width: 40%;
+    float:left;
+    padding: 10px;
+}
+
+footer{
+    display: block;
+/*Dopo aver utilizzato la proprietà float per posizionare gli elementi, è necessario
+"clear" il float per evitare che altri elementi vengano influenzati.
+clear:both; risolve
+*/
+    clear: both;
+    background-color: gainsboro;
+    text-align: center;
+    padding: 25px;
+    
+}
+
+/*Query per adattare il lyout del sito web a deverse dimensioni dello schermo, come i 
+dispositivi mobili. Permette di modificare le proprietà CSS quando la larghezza
+è pari o inferiore a un certo valore*/
+@media screen and (max-width:600px){
+    aside,section, article{
+        width: 100%;
+    }
+}

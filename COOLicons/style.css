@@ -1,0 +1,34 @@
+.icons{
+    text-align: center;
+}
+.icons a{
+    /*perchè compariva il testo del link sotto le icone*/
+    text-decoration: none;
+    margin-right: 20px;
+}
+/*non si possonoo inserire gl ispazi quandi si 
+sostituiscono gli spazi con i punto*/
+.fa-sharp.fa-solid.fa-house.fa-5x{
+    color: blue;
+}
+.fa-sharp.fa-solid.fa-house.fa-5x:hover{
+    color: rgb(115, 115, 223);
+}
+.fa-solid.fa-comment.fa-5x{
+    color: rebeccapurple;
+}
+.fa-solid.fa-comment.fa-5x:hover{
+    color: rgb(181, 129, 233);
+}
+.fa-solid.fa-video.fa-5x{
+    color: red;
+}
+.fa-solid.fa-video.fa-5x:hover{
+    color: rgb(230, 137, 137);
+}
+.fa-brands.fa-tiktok.fa-5x{
+    color: green;
+}
+.fa-brands.fa-tiktok.fa-5x:hover{
+    color: rgb(143, 243, 143);
+}
