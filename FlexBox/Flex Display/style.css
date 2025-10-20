@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+}
+.container{
+    border:6px solid black;
+/*Impostato così dipende dalla grandezza della pagina*/
+/*display: flex -> Crea un contenitore flex a livello di blocco.
+    Significa che il contenitore occuparà l'intera larghezza disponibile
+    (simile a un blocco), ma con le regole del flex box. Da sx a dx.*/
+    display: flex;
+}
+.container2{
+    border:6px solid black;
+/*inline-flex -> occupa solo la larghezza necessaria per 
+contenere i suoi figli */    
+    display: inline-flex;
+}
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+.item-1{
+    background-color: orange;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}
+.item-6{
+    background-color: rgb(32, 133, 61);
+}
+.item-7{
+    background-color: rgb(73, 123, 215);
+}
+.item-8{
+    background-color: rgb(199, 56, 56);
+}
+.item-9{
+    background-color: rgb(235, 157, 213);
+}

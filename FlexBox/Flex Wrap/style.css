@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+}
+.container{
+    border:6px solid black;
+/*Normalmente senza flex-wrap -> tutti gli elementi di un contenitore
+cercheranno di stare su una singola linea.
+    -> Se lo spazio non è sufficiente, gli elementi si restringeranno e poi
+    overflowr dal contenitore.*/
+    display: flex;
+/*nowrap -> valore di default (come se non ci fosse il wrap)*/
+    flex-wrap: nowrap;
+}
+.container2{
+    border:6px solid black;
+    display: flex;
+/*In questo caso abbiamo una impostazione di defult, in riga*/
+/*wrap -> Se non c'è abbastanza spazio, gli elementi andaranno a capo in 
+        una nuova riga sottstante*/
+    flex-wrap: wrap;
+}
+.container3{
+    border:6px solid black;
+    display: flex;
+/*wrap-reverse -> fa quello che il wrap ma prende una riga superiore*/
+    flex-wrap: wrap-reverse;
+}
+.container4{
+    border:6px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    flex-wrap: nowrap;
+/*margin bottom utilizzato al posto di fare      <br> <br> <br> ...*/
+    margin-bottom:200px;
+}
+.container5{
+    border:6px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+/*il wrap avviene perchè non ci sta nell'altezza di 400px
+di conseguenza si espande in un altra colonna a dx*/
+    flex-wrap: wrap;
+}
+.container6{
+    border:6px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+/*ripetto al wrap di colonne la colonna è quella di sx*/
+    flex-wrap: wrap-reverse;
+}
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+.item-1{
+    background-color: orange;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}
+.item-6{
+    background-color: rgb(32, 133, 61);
+}
+.item-7{
+    background-color: rgb(73, 123, 215);
+}
+.item-8{
+    background-color: rgb(199, 56, 56);
+}
+.item-9{
+    background-color: rgb(235, 157, 213);
+}

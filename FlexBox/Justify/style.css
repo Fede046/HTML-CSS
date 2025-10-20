@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+}
+
+/*In questo caso fatto nel row ma funiona la stessa cosa nel column*/
+.container{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*Allinea gli elemnti all'inizio dell'asse principale (main axis)*/
+    justify-content: flex-start;
+
+}
+.container2{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*allinea gli elementi alla fine dell'asse principale (main axis)*/
+    justify-content: flex-end;
+
+
+}
+.container3{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*center -> allinea gli elementi al centro dell'asse principale (main axis)*/
+    justify-content: center;
+}
+.container4{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*Distribuisce lo spazio rimenente uniformemente tra gli elementi Flex.
+Il primo elemento è allineato all'inizio e l'ultimo alla fine del contenitore*/
+    justify-content: space-between;
+
+}
+.container5{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*Distribuisce lo spazio in modo che ci sia uno spazio uniforme attorno
+a ciascun elemento. Lo spazio all'inizio e alla fine del contenitore
+è metà dello spazio tra gli elementi*/
+    justify-content: space-around;
+
+}
+.container6{
+    border:6px solid black;
+    display: flex;
+    margin-bottom: 20px;
+/*Distribuisce lo spazio extra in modo uniforme in tutto il contenitore, 
+garantendo che lo spazio tra gli elementi, e tra gli elementi e i bordi, 
+sia esattamente lo stesso*/
+    justify-content: space-evenly;
+}
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+.item-1{
+    background-color: orange;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}
