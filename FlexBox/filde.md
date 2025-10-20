@@ -38,3 +38,12 @@ NOTA -> La direzione di entrambi gli assi può essere modificata.
 - **justify-content** -> Definisce l'allineamento degli elementi lungo l'asse principale (main axis).
 - **align-item** -> Defisce l'allineamento degli elementi Flex lungo l'asse trasversale (cross axis).
 - **align-content** -> Proprietà simile a (justify-content), allinea lungo l'asse trasversale. Importante pk algin-content funziona solo quando ci sono più righe di elementi Flex nel container.
+
+
+
+
+-------
+
+
+**Baseline**
+![alt text](image-2.png)

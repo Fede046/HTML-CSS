@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+}
+/*algin-items -> funziona in modo simile a justify-content, ma 
+nella direzione perprendicolare, rispetto all'asse principale.
+Per vedere l'effetto della proprietà , il contenitore deve avere 
+un'altezza definita*/ 
+.container{
+    border:6px solid black;
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+/*stretch -> default, gli elementi si allungano per coprire l'intera
+lunghezza dell'asse trasversale*/
+    align-items:stretch ;
+}
+.container2{
+    border:6px solid black;
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+/*Allinea gli elementi all'inizio della trasversale*/
+    align-items:flex-start ;
+}
+.container3{
+    border:6px solid black;
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+/*Allinea gli elementi alla fine della trasversale*/
+    align-items:flex-end ;
+}
+.container4{
+    border:6px solid black;
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+/*Allinea gli elementi al centro della trasversale*/
+    align-items:center ;
+}
+.container5{
+    border:6px solid black;
+    display: flex;
+    height: 150px;
+    margin-bottom: 20px;
+/*Vedere documento iniziale*/
+/*Allinea gli elementi Flex in base alla linea
+di base del loro contenuto testuale.
+Se si hanno testi di diverse dimensioni all'interno degli elementi, 
+baseline assicura che il testo si allinei orizzontalmente, 
+posizionando l'elemento in base a dove si trova la linea di 
+base del testo.
+*/
+    align-items:baseline;
+}
+
+.container5 .flex-item.item-1{
+    padding-bottom: 3rem;
+}
+.container5 .flex-item.item-2{
+    padding-bottom: 5rem;
+}
+.container5 .flex-item.item-3{
+    font-size: 2em;
+}
+
+
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+.item-1{
+    background-color: orange;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}
