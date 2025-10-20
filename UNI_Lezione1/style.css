@@ -1,0 +1,64 @@
+* {
+    /*Proprietà che permette di includere il margin e il bordo
+    nel calcolo del width*/
+    box-sizing: border-box;
+}
+
+#main {
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+#a {
+    width: 50%;
+    height: 50px;
+    text-align: left;
+    padding: 15px;
+    float: left;
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+#b {
+    text-align: right;
+    padding: 15px;
+    width: 50%;
+    height: 50px;
+    float: right;
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+#c {
+    text-align: left;
+    padding: 15px;
+    width: 25%;
+    height: 50px;
+    float: left;
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+#d {
+    text-align: right;
+    padding: 15px;
+    width: 75%;
+    height: 50px;
+    float: right;
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+#e {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    float: right;
+    border: 2px solid white;
+    background-color: tomato;
+}
+
+div {
+    color: white;
+}
