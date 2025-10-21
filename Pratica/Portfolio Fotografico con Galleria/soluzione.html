@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fotografico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 350px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .contact input:focus,
+        .contact textarea:focus {
+            outline: none;
+            border-color: #f39c12;
+        }
+
+        .contact button {
+            padding: 1rem 2rem;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #e67e22;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Marco Rossi</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#galleria">Galleria</a></li>
+                <li><a href="#about">Chi Sono</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <div>
+            <h2>Fotografia d'Autore</h2>
+            <p>Catturare momenti, raccontare storie</p>
+        </div>
+    </div>
+
+    <section id="galleria">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">Portfolio</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=400" alt="Paesaggio 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Paesaggio 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400" alt="Paesaggio 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400" alt="Paesaggio 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Paesaggio 5">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400" alt="Paesaggio 6">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Chi Sono</h2>
+        <p>Sono un fotografo professionista specializzato in paesaggi e natura. Da oltre 10 anni viaggio per il mondo catturando la bellezza dei luoghi più suggestivi del pianeta. La mia missione è raccontare storie attraverso le immagini, trasmettendo emozioni e sensazioni uniche.</p>
+    </section>
+
+    <section class="contact" id="contatti">
+        <h2>Contattami</h2>
+        <form>
+            <input type="text" name="nome" placeholder="Il tuo nome" required>
+            <input type="email" name="email" placeholder="La tua email" required>
+            <textarea name="messaggio" rows="6" placeholder="Il tuo messaggio" required></textarea>
+            <button type="submit">Invia Messaggio</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Marco Rossi Photography</p>
+        <p>Email: <a href="mailto:info@marcorossi.com">info@marcorossi.com</a></p>
+    </footer>
+</body>
+</html>

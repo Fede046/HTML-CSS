@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trattoria Bella Vista</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200') center/cover fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '★';
+            position: absolute;
+            top: 2rem;
+            font-size: 3rem;
+            color: #d4af37;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #d4af37;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid #d4af37;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #8b4513;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .menu-card {
+            flex: 1 1 280px;
+            max-width: 350px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 1.5rem;
+        }
+
+        .menu-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #8b4513;
+        }
+
+        .menu-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .gallery-section {
+            background-color: #f9f9f9;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .gallery img {
+            flex: 1 1 200px;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .info-section {
+            background-color: #8b4513;
+            color: white;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-around;
+        }
+
+        .info-box {
+            flex: 1 1 250px;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .booking-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .booking-section h2 {
+            color: white;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        input, select, textarea {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: 3px solid #d4af37;
+        }
+
+        button[type="submit"] {
+            padding: 1rem 2rem;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #b8941f;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Trattoria Bella Vista</h1>
+        <p>Sapori autentici della tradizione italiana</p>
+        <a href="#prenota" class="btn">Prenota un Tavolo</a>
+    </div>
+
+    <section id="menu">
+        <div class="container">
+            <h2>I Nostri Piatti</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400" alt="Pasta">
+                    <div class="menu-card-content">
+                        <h3>Pasta alla Carbonara</h3>
+                        <p>Guanciale croccante, uovo, pecorino romano</p>
+                        <span class="price">€14</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Pizza">
+                    <div class="menu-card-content">
+                        <h3>Pizza Margherita</h3>
+                        <p>Pomodoro, mozzarella di bufala, basilico</p>
+                        <span class="price">€12</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" alt="Risotto">
+                    <div class="menu-card-content">
+                        <h3>Risotto ai Funghi</h3>
+                        <p>Porcini freschi, parmigiano, prezzemolo</p>
+                        <span class="price">€16</span>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=400" alt="Tiramisù">
+                    <div class="menu-card-content">
+                        <h3>Tiramisù Classico</h3>
+                        <p>Mascarpone, caffè, savoiardi, cacao</p>
+                        <span class="price">€8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>La Nostra Atmosfera</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300" alt="Interno">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300" alt="Tavolo">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=300" alt="Chef">
+                <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=300" alt="Cibo">
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <h2>Informazioni</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Orari</h3>
+                    <p>Lun-Ven: 12:00 - 15:00, 19:00 - 23:00</p>
+                    <p>Sab-Dom: 12:00 - 23:00</p>
+                </div>
+                <div class="info-box">
+                    <h3>Dove Siamo</h3>
+                    <p>Via Roma 123</p>
+                    <p>00100 Roma, Italia</p>
+                </div>
+                <div class="info-box">
+                    <h3>Contatti</h3>
+                    <p>Tel: +39 06 1234567</p>
+                    <p>info@bellavista.it</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="prenota">
+        <div class="container">
+            <h2>Prenota il Tuo Tavolo</h2>
+            <form>
+                <input type="text" name="nome" placeholder="Nome e Cognome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="telefono" placeholder="Telefono" required>
+                <input type="date" name="data" required>
+                <input type="time" name="ora" required>
+                <select name="persone" required>
+                    <option value="">Numero di persone</option>
+                    <option value="1">1 persona</option>
+                    <option value="2">2 persone</option>
+                    <option value="3">3 persone</option>
+                    <option value="4">4 persone</option>
+                    <option value="5">5+ persone</option>
+                </select>
+                <textarea name="note" rows="4" placeholder="Note aggiuntive (allergie, richieste speciali...)"></textarea>
+                <button type="submit">Conferma Prenotazione</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Trattoria Bella Vista - Tutti i diritti riservati</p>
+    </footer>
+</body>
+</html>
