@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+}
+
+/*algin-content -> gestisce l'allineamento delle linne di contenuto
+lungo l'asse trasversale (cross axis)*/
+/*proprietà, è un mix tra justify-content e algin-items.*/
+/*algin-content -> allinea intere linee di elementi e distribuisce lo
+spazio estra tra queste linee lungo l'asse trasversale.
+(necessita di imposatzione di wrap per linne multiple)*/
+.container {
+    border: 6px solid black;
+    display: flex;
+    height: 400px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    /*stretch -> (defoult)Linee si allungano per riempre lo spazio 
+disponibile nel comntenitore*/
+    align-content: stretch;
+}
+
+
+.container2 {
+    border: 6px solid black;
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 400px;
+    /*flex-start -> Spinge le linee di contenuto all'inizio dell'asse trasversale (cross start)*/
+    align-content: flex-start;
+}
+
+.container3 {
+    border: 6px solid black;
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 400px;
+    /*flex-end -> spinge le linee di contenuto alla fine dell'asse trasversale (cross end)*/
+    align-content: flex-end;
+}
+
+.container4 {
+    border: 6px solid black;
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 400px;
+    /*center -> spinge il contenuto al centro dell'asse trasversale*/
+    align-content: center;
+}
+
+.container5 {
+    border: 6px solid black;
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 400px;
+    /*space-between -> Distribuisce lo spazio extra uniformemente tra le 
+    linee. La prima linea è allineta all'inizio, l'ultima alla fine.*/
+    align-content: space-between;
+}
+
+.container6 {
+    border: 6px solid black;
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    height: 400px;
+    /*space-around -> Distribuisce lo spazio attorno alle linee. Lo sapzio tra le linee
+è doppio rispetto a quello ai bordi (inizio e fine) del contenitore
+(es. lo spazio al centro è 100px mentre gli spazi sopra e sotto sono 50px)
+*/
+    align-content: space-around;
+}
+
+
+.flex-item {
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+
+.item-1 {
+    background-color: orange;
+}
+
+.item-2 {
+    background-color: rgb(72, 135, 149);
+}
+
+.item-3 {
+    background-color: rgb(97, 174, 49);
+}
+
+.item-4 {
+    background-color: rgb(206, 46, 147);
+}
+
+.item-5 {
+    background-color: rgb(225, 191, 127);
+}
+
+.item-6 {
+    background-color: rgb(32, 133, 61);
+}
+
+.item-7 {
+    background-color: rgb(73, 123, 215);
+}
+
+.item-8 {
+    background-color: rgb(199, 56, 56);
+}
+
+.item-9 {
+    background-color: rgb(235, 157, 213);
+}
