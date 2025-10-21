@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+.container{
+    border:6px solid black;
+    display: flex;
+    height: 200px;
+}
+/*flex-shrink->viene applicata al singolo elemento Flex per definire la sua capacità 
+di ridursi quando il contenitore è insufficiente*/
+/*1 ->(valore predefinto) Gli elementi si devono restringere equamente, se necessario*/
+/*0 -> Impedisce all'elemento di restringersi*/
+/*n>1 -> Si restringerà una qtà proporzionale di spazio in più rispetto agli altri 
+        elementi */
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+}
+.item-1{
+    background-color: orange;
+    flex-shrink: 0;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+    flex-shrink: 4;
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}

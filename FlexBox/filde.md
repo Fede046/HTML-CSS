@@ -47,3 +47,17 @@ NOTA -> La direzione di entrambi gli assi può essere modificata.
 
 **Baseline**
 ![alt text](image-2.png)
+
+
+
+--------
+
+**Flex**
+Proprietà che combina tre proprietà separate:
+    flex:[flex-grow][flex-shrink][flex-basis]
+    
+**flex-grow** (Fattore di crescita, predefinito è 0): Definisce quanto l'elemento deve espandersi per occupare lo spazio extra.
+
+**flex-shrink** (Fattore di restringimento, predefinito è 1): Definisce quanto l'elemento deve restringersi se lo spazio è insufficiente.
+
+**flex-basis** (Dimensione iniziale, predefinito è auto): Definisce la dimensione iniziale dell'elemento prima della distribuzione dello spazio.

@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+.container{
+    border:6px solid black;
+    display: flex;
+    /*flex-direction: column;*/
+}
+
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+/*order -> viene applicato a un singolo elemento Flex per modificare l'ordine di 
+visualizzazione all'interno del contatore, indipendentemente dall'ordine in cui
+sono scritti nel codice HTML*/
+/*Valore di Default: Tutti gli elementi Flex hanno un valore predefinito di order: 0*/
+/*Gli elementi vengono disposti in base al valore di order, dal più basso al più alto */
+/*Concetto uguale per la formattazione a colonne*/
+.item-1{
+    background-color: orange;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+    order: -1;
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+    order:1;
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}

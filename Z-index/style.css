@@ -1,0 +1,36 @@
+.box{
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+/*z-index -> Controlla l'ordine di sovrapposizione degli elementi (asse z)(la profondità)
+          -> all'aumentare del varlore z-index di un elemento questo verrà posizionato 
+            davanti agli altri elementi
+          -> Non funziona sugli elementi con position:static (predefinito) (con gli altri si)  
+          -> Evitare valori troppo alti
+          -> Se l'elemento che si vuole sovrapporre è un figlio di un altro elemento, il suo z-index 
+            è limitato al contesto di sovrapposizione creato dal suo elemento genitore
+             -> Un elemento figlio può avere un z-index molto alto (es. z-index: 999), 
+             ma se il suo elemento genitore ha un z-index basso (es. z-index: 1), 
+             il figlio non potrà mai posizionarsi sopra un altro elemento che ha 
+             un genitore con un z-index più alto
+             ->necessario spostare l'elemento figlio fuori dal genitore
+          */          
+.box.box-red{
+    background-color: red;
+    z-index: 2;
+    left: 145px;
+}
+
+.box.box-blue{
+    background-color: aqua;
+    bottom: 100px;
+    z-index: 1;
+}
+
+.box.box-yellow{
+    background-color: rgb(237, 237, 40);
+    bottom: 500px;
+    left: 55px;
+    z-index: 3;
+}

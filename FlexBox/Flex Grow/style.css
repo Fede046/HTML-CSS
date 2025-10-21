@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+.container{
+    border:6px solid black;
+    display: flex;
+
+}
+
+.flex-item{
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+/*floex-grow -> viene applicata a un singolo elemento Flex. Serve per definire la sua
+capacità di espandersi e occupare lo spazio extra disponibile all'interno del contenitore*/
+/*0 -> valore predefinito indica che gli elementi non devono crescere per occupare spazio extra*/
+/*1 -> Elemento si espande per prendere tutto lo spazio rimanente. Se applicato a tutti lo
+        spazio aggiuntivo viene distribuito uniformemente tra di loro*/
+/*n>1 -> (es.3) L'elemento occuperà una quantità proporzionale di spazioin più rispetto agli altri
+        (es. se c'è 3 e 1 -> 75% e 25%)*/
+/*decimali si negativi no*/
+.item-1{
+    background-color: orange;
+    flex-grow: 1;
+}
+.item-2{
+    background-color: rgb(72, 135, 149);
+    flex-grow: 3;
+}
+.item-3{
+    background-color: rgb(97, 174, 49);
+}
+.item-4{
+    background-color: rgb(206, 46, 147);
+}
+.item-5{
+    background-color: rgb(225, 191, 127);
+}
