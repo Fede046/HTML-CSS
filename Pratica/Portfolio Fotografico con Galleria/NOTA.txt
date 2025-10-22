@@ -1,0 +1,1 @@
+Questo esercizio non include grid e media query.

@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 150px;
+    flex-wrap: wrap;
+}
+
+.area {
+    background-color: red;
+    color: white;
+    height: 33%;
+    text-align: center;
+    border: 2px solid white;
+}
+
+#a {
+    width: 50%;
+}
+
+#b {
+    width: 50%;
+}
+
+#c {
+    width: 75%;
+}
+
+#d {
+    width: 25%;
+}
+
+#e {
+    width: 100%;
+}
+
+#a,
+#b {
+    border-top: 0;
+}
