@@ -1,0 +1,40 @@
+.grid-container{
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.item{
+    border: 2PX solid black;
+}
+/*Esempio di utilizzo è un testo sopra un immagine*/
+/*Sostituendo evetuali posizion abosulte/relative per farlo*/
+.item.i1{
+    background-color: green;
+/*Le righe divisorie si iniziano a contare da 1*/
+/*Bisogna definire i divisori sia di righe che di colonne,
+    per assicurarsi una corretta posizione, sopratutto in caso
+    di sovrapposizione di due item*/
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    color:white;
+
+}
+
+.item.i2{
+    background-color: violet;
+    color:white;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    opacity: 0.5;
+}
+
+body{
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}

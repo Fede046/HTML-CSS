@@ -1,0 +1,48 @@
+/*Se fai ispeziona e poi clicchi su grid ti fa avedere i limiti dei grid*/
+
+.grid-container{
+/*Questo display: grid lo trasforma in un un grid container*/
+    display: grid;
+    /*Definisce il numero e la dimensione delle colonne*/
+    /*Ogni puno corrisponde a una colonna*/
+    /*Puoi inserie (percentuali rispetto al grid conaner totale)
+    (oppure 1fr 1fr per dividere in due di ugual misura (fr-> frazione)*/
+    grid-template-columns: 200px 200px 200px ;
+    /*Stessa cosa per le righe*/
+    grid-template-rows: 200px 200px 200px;
+    /*Aggiunge spaziatura tra righe, (row-gap e column-gap), forma abbreviata*/
+    gap:1em;
+    /*Spostamento all'interno della singola cella*/
+    /*justify-items-> (start (inizio) end (fine) center)ORIZZONTALE*/
+    justify-items: center;
+    /*align-items -> (start (inizio) end (fine) center) VERTICALE*/
+    align-items: center ;
+
+    /*Stamento del grid all'interno del contenitore (no singola cella)*/
+    justify-content: center;
+    align-content: center;
+
+/*Implicits Grids*/
+/*In caso di aggiunta di altri item, questo permette di gestirle 
+in modo automatico, può sostituire la parte iniziale*/
+    grid-auto-rows: 200px;
+    grid-auto-columns: 200px;
+
+/*gird-auto-flow: roow(normalemente) (column colonne (aggiunge colonne)*/
+/*Quando viene aggiunta una cella, aggiunge una riga/colonna per 
+quella cella*/
+    grid-auto-flow: column;
+}
+
+
+.item{
+    /*Gli item possono avere dimensioni diverse da quelle stabilite dai grid*/
+    height: 10px;
+    width: 10px;
+    padding: 2em;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2rem;
+}
