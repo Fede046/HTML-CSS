@@ -3,3 +3,234 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Georgia',serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero img{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+}
+
+.hero h2{
+    font-size: 3rem;
+    top: 2rem;
+    position: absolute;
+    color: orange;
+}
+
+.hero h1{
+    color:rgb(255, 255, 255);
+    font-size: 4rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 1rem;
+}
+
+.hero p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn{
+    display: inline-block;
+    background-color: orange;
+    border: 2px solid orange;
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    /*text decoration non elimina la barra del link*/
+    text-decoration: none;
+    /*padding prima altezza poi largezza*/
+    padding: 1rem 2.5rem;
+    /*controlla href quando fa cambiamenti*/
+    /*solo stile*/
+    transition: all 0.3s;
+
+}
+
+.btn:hover{
+    background-color: transparent;
+    background-color: blue;
+    font-size: 1.5rem;
+}
+
+/*servono per la gestione delle sezioni in generale*/
+section{
+    padding: 5rem 2rem;
+}
+/*uguale a section*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: brown;
+}
+
+.menu-grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.menu-card{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    flex: 1 1 280px;
+    max-width: 350px;
+    border: black solid 2px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.menu-card img{
+    width: 100%;
+    /*border raduis per specifici angoli*/
+    border-radius: 18px 18px 0 0;
+    height: 200px;
+}
+
+.menu-card:hover{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.menu-card-content{
+    padding: 1.5rem;
+}
+
+.menu-card h3{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: brown;
+}
+.menu-card p{
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+.price{
+    font-size: 1.3rem;
+    color:rgb(189, 167, 85);
+    font-weight: bold;
+}
+
+.gallery-section{
+    background-color: white;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img{
+    flex: 1 1 200px;
+    max-width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.gallery img:hover{
+    max-width: 320px;
+    height: 220px;
+}
+
+
+.info-section {
+    background-color: rgb(225, 225, 131);
+}
+
+.info-grid{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.info-box{
+    width: 33%;
+    
+}
+
+.info-box h3{
+    font-size: 1.5rem;
+    color: rgb(174, 125, 125);
+}
+
+.info-box p{
+    color: rgb(77, 67, 67);
+}
+
+/*--------*/
+
+.booking-section{
+    background-color: slateblue;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.booking-section h2{
+    color: white;
+}
+
+.booking-section form{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.booking-section input,select{
+    height: 3rem;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+.booking-section button{
+    display: inline-block;
+
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.booking-section button:hover{
+    background-color: yellow;
+    font-size: 1.1rem;
+    transform: scale(1.05);
+}
+
+/*----*/
+footer{
+    background-color: rgb(37, 35, 35);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}

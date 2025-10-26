@@ -7,9 +7,119 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div lclass="hero">
+    <div class="hero" >
+     <img src="img/ristorante.jpg" > 
+        <h2>★</h2>
         <h1>Trattoria Bella Vista</h1>
         <p>Sapori autentici della tradizione italiana</p>
+        <a href="#prenota" class="btn">Prenota un tavolo</a>
     </div>
+
+    <section id="menu">
+        <div class="container">
+            <h2>I Nostri Piatti</h2>
+            <div class="menu-grid">
+                 <div class="menu-card">
+                     <img src="img/pasta.webp" alt="pasta">
+                     <div class="menu-card-content">
+                         <h3>Pasta al sugo</h3>
+                         <p>Pomodoro fresco, formaggio, basilico, olio</p>
+                         <span class="price">13$</span>
+                     </div>
+                 </div>
+                 <div class="menu-card">
+                     <img src="img/dolce.jpg" alt="dolce">
+                     <div class="menu-card-content">
+                         <h3>Cannoli</h3>
+                         <p>Zucchero, farina, latte</p>
+                         <span class="price">10$</span>
+                     </div>
+                 </div>
+                 <div class="menu-card">
+                     <img src="img/pizza.avif" alt="pizza">
+                     <div class="menu-card-content">
+                         <h3>Pizza</h3>
+                         <p>farina, acqua, sale, olio</p>
+                         <span class="price">11$</span>
+                     </div>
+                 </div>
+                 <div class="menu-card">
+                     <img src="img/lasagna.jpg" alt="lasagna">
+                     <div class="menu-card-content">
+                         <h3>Lasagna</h3>
+                         <p>pasta, pomodoro, formaggio</p>
+                         <span class="price">9$</span>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>La Nostra Atmosfera</h2>
+            <div class="gallery">
+                <img src="img/nero.jpg" alt="Nera">
+                <img src="img/bianco.jpg" alt="Bianca">
+                <img src="img/marrone.jpg" alt="Marrone">
+                <img src="img/viola.jpg" alt="Viola">
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <h2>Informazioni</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Orari</h3>
+                    <p>Lun-Ven: 12:00 - 15:00, 19:00 - 23:00</p>
+                    <p>Sab-Dom: 12:00 - 23:00</p>
+                </div>
+                <div class="info-box">
+                    <h3>Dove siamo</h3>
+                    <p>Via Ferrara 33</p>
+                    <p>0010101 Ferrara, Italia</p>
+                </div>
+                <div class="info-box">
+                    <h3>Contatti</h3>
+                    <p>Tel: +39 314 333 6661</p>
+                    <p>info@prova.it</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="prenota">
+        <div class="container">
+            <h2>Prenota il Tuo Tavolo</h2>
+            <form>
+                <input type="text" name="name" placeholder="Nome e Cognome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="telefono" placeholder="Telefono" required>
+                <input type="date" name="data" required>
+                <input type="time" name="ora" required>
+                
+                <select name="persone" required>
+                    <option value="">Numero di Persone</option>
+                    <option value="1">1 persona</option>
+                    <option value="2">2 persone</option>
+                    <option value="3">3 persone</option>
+                    <option value="4">4 persone</option>
+                    <option value="5">5+ persone</option>
+                </select> 
+
+                <textarea name="note" rows="4" placeholder="Note aggiuntive"></textarea>
+                <button type="submit">Conferma Prenotazione</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy 2025 Trattoria Bella Vista</p>
+    </footer>
+
+
+
 </body>
 </html>
