@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    font-size: 1.5rem;
+}
+
+nav ul{
+
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+nav a:hover{
+    color: orange;
+}
+
+
+/*----------------------*/
+#home{
+    text-align: center;
+    position: relative;
+    height: 30%;
+    padding: 6rem;
+    color: rgb(197, 250, 25);
+}
+
+#home img{
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    top:0;
+    left: 0;
+    object-fit: cover;
+}
+
+/*----------*/
+
+#galleria{
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+#galleria h1{
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+#galleria div{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    gap: 1rem;
+    justify-content: center;
+
+}
+
+#galleria img{
+    flex: 1 1 300px;
+    max-width: 350px;
+    width: 30%;
+    border-radius: 10px;
+    transition: all 0.3s;
+
+}
+
+
+#galleria img:hover{
+    transform: translateY(-1rem);
+}
+
+
