@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Electric Waves - Band Ufficiale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #0a0a0a;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255,0,100,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0080, #7928ca, #ff0080);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,0,128,0.2);
+            color: #ff0080;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200') center/cover fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255,0,128,0.8);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255,0,128,0.8); }
+            50% { text-shadow: 0 0 50px rgba(255,0,128,1), 0 0 80px rgba(121,40,202,0.8); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .btn-hero {
+            padding: 1rem 3rem;
+            background: linear-gradient(45deg, #ff0080, #7928ca);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 30px rgba(255,0,128,0.5);
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 50px rgba(255,0,128,0.8);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ff0080, #7928ca);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .music-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%);
+        }
+
+        .tracks {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .track {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,0,128,0.2);
+            transition: all 0.3s;
+        }
+
+        .track:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,0,128,0.5);
+            transform: translateX(10px);
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .track-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff0080, #7928ca);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .track-title {
+            flex: 1;
+        }
+
+        .track h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .track p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(280deg);
+        }
+
+        .albums {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .album {
+            width: 280px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,0,128,0.2);
+            transition: all 0.3s;
+        }
+
+        .album:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255,0,128,0.4);
+            border-color: rgba(255,0,128,0.8);
+        }
+
+        .album img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .album-info {
+            padding: 1.5rem;
+        }
+
+        .album h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .album p {
+            color: #999;
+        }
+
+        .video-section {
+            background: #0a0a0a;
+        }
+
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .video-card {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,0,128,0.2);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .tour-section {
+            background: linear-gradient(180deg, #1a0a1a 0%, #0a0a0a 100%);
+        }
+
+        .tour-dates {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tour-date {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff0080;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tour-date-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .tour-date-info p {
+            color: #999;
+        }
+
+        .tour-btn {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(45deg, #ff0080, #7928ca);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255,0,128,0.6);
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,0,128,0.2);
+        }
+
+        footer p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">THE ELECTRIC WAVES</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#tour">Tour</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <h1>THE ELECTRIC WAVES</h1>
+        <p>Alternative Rock from Italy</p>
+        <a href="#music" class="btn-hero">Ascolta Ora</a>
+    </div>
+
+    <section class="music-section" id="music">
+        <div class="container">
+            <h2>Latest Tracks</h2>
+            <div class="tracks">
+                <div class="track">
+                    <div class="track-info">
+                        <div class="track-number">1</div>
+                        <div class="track-title">
+                            <h3>Neon Dreams</h3>
+                            <p>3:45 • Album: Electric Nights</p>
+                        </div>
+                    </div>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="track">
+                    <div class="track-info">
+                        <div class="track-number">2</div>
+                        <div class="track-title">
+                            <h3>Midnight Ride</h3>
+                            <p>4:12 • Album: Electric Nights</p>
+                        </div>
+                    </div>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="track">
+                    <div class="track-info">
+                        <div class="track-number">3</div>
+                        <div class="track-title">
+                            <h3>Thunderstorm</h3>
+                            <p>3:28 • Album: Wild Hearts</p>
+                        </div>
+                    </div>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Discografia</h2>
+            <div class="albums">
+                <div class="album">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400" alt="Album 1">
+                    <div class="album-info">
+                        <h3>Electric Nights</h3>
+                        <p>2025 • 12 tracce</p>
+                    </div>
+                </div>
+                <div class="album">
+                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400" alt="Album 2">
+                    <div class="album-info">
+                        <h3>Wild Hearts</h3>
+                        <p>2024 • 10 tracce</p>
+                    </div>
+                </div>
+                <div class="album">
+                    <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400" alt="Album 3">
+                    <div class="album-info">
+                        <h3>Urban Legends</h3>
+                        <p>2023 • 11 tracce</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="videos">
+        <div class="container">
+            <h2>Video Musicali</h2>
+            <div class="videos">
+                <div class="video-card">
+                    <video controls poster="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <h3>Neon Dreams - Official Video</h3>
+                        <p>2.5M visualizzazioni • 2 mesi fa</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <video controls poster="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=500">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-info">
+                        <h3>Midnight Ride - Live Session</h3>
+                        <p>1.8M visualizzazioni • 3 mesi fa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tour-section" id="tour">
+        <div class="container">
+            <h2>Tour Dates</h2>
+            <div class="tour-dates">
+                <div class="tour-date">
+                    <div class="tour-date-info">
+                        <h4>15 NOV - Milano</h4>
+                        <p>Alcatraz • 21:00</p>
+                    </div>
+                    <a href="#" class="tour-btn">Biglietti</a>
+                </div>
+                <div class="tour-date">
+                    <div class="tour-date-info">
+                        <h4>22 NOV - Roma</h4>
+                        <p>Atlantico Live • 21:00</p>
+                    </div>
+                    <a href="#" class="tour-btn">Biglietti</a>
+                </div>
+                <div class="tour-date">
+                    <div class="tour-date-info">
+                        <h4>29 NOV - Torino</h4>
+                        <p>Hiroshima Mon Amour • 21:00</p>
+                    </div>
+                    <a href="#" class="tour-btn">Biglietti</a>
+                </div>
+                <div class="tour-date">
+                    <div class="tour-date-info">
+                        <h4>6 DIC - Bologna</h4>
+                        <p>Estragon Club • 21:00</p>
+                    </div>
+                    <a href="#" class="tour-btn">Biglietti</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The Electric Waves • All Rights Reserved</p>
+        <p>Follow us: Instagram | Spotify | YouTube</p>
+    </footer>
+</body>
+</html>

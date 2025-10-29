@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog Italia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 0;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        main {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .article {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .article img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .article-meta {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .article h2 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .article h2 a:hover {
+            color: #667eea;
+        }
+
+        .article p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #764ba2;
+        }
+
+        .widget {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .widget h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid #667eea;
+        }
+
+        .profile h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .categories ul {
+            list-style: none;
+        }
+
+        .categories li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories li:last-child {
+            border-bottom: none;
+        }
+
+        .categories a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.3s;
+        }
+
+        .categories a:hover {
+            color: #667eea;
+        }
+
+        .categories span {
+            background-color: #667eea;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Tech Blog Italia</h1>
+            <p>Notizie, tutorial e recensioni dal mondo della tecnologia</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programmazione</a></li>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">AI & ML</a></li>
+            <li><a href="#">Recensioni</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800" alt="Codice">
+                <div class="article-content">
+                    <div class="article-meta">15 Ottobre 2025 • Programmazione</div>
+                    <h2><a href="#">Introduzione a Python per Principianti</a></h2>
+                    <p>Python è uno dei linguaggi di programmazione più popolari al mondo. In questo articolo scopriremo perché è così amato dai programmatori e come iniziare a programmare con questo potente strumento. Esploreremo la sintassi base, le strutture dati fondamentali e creeremo il nostro primo programma.</p>
+                    <a href="#" class="read-more">Leggi di più →</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt="AI">
+                <div class="article-content">
+                    <div class="article-meta">8 Ottobre 2025 • AI & ML</div>
+                    <h2><a href="#">Machine Learning: Da Dove Iniziare</a></h2>
+                    <p>L'intelligenza artificiale non è più fantascienza, è realtà. In questa guida completa esploreremo i concetti fondamentali del machine learning, gli algoritmi più utilizzati e gli strumenti necessari per iniziare il tuo percorso in questo affascinante campo della tecnologia.</p>
+                    <a href="#" class="read-more">Leggi di più →</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800" alt="Smartphone">
+                <div class="article-content">
+                    <div class="article-meta">5 Ottobre 2025 • Recensioni</div>
+                    <h2><a href="#">Recensione: I Migliori Laptop 2025</a></h2>
+                    <p>Abbiamo testato i laptop più performanti del 2025 per aiutarti a scegliere quello perfetto per le tue esigenze. Dalla potenza di calcolo alla durata della batteria, scopri quale dispositivo offre il miglior rapporto qualità-prezzo e quali sono le caratteristiche da non perdere.</p>
+                    <a href="#" class="read-more">Leggi di più →</a>
+                </div>
+            </article>
+        </main>
+
+        <aside>
+            <div class="widget profile">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200" alt="Autore">
+                <h4>Luca Bianchi</h4>
+                <p>Sviluppatore Full-Stack e appassionato di tecnologia. Scrivo articoli per aiutare altri developer a crescere.</p>
+            </div>
+
+            <div class="widget categories">
+                <h3>Categorie</h3>
+                <ul>
+                    <li><a href="#">Programmazione <span>24</span></a></li>
+                    <li><a href="#">Web Design <span>18</span></a></li>
+                    <li><a href="#">AI & ML <span>12</span></a></li>
+                    <li><a href="#">Recensioni <span>15</span></a></li>
+                    <li><a href="#">Tutorial <span>32</span></a></li>
+                    <li><a href="#">News <span>45</span></a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Articoli Popolari</h3>
+                <ul style="list-style: none;">
+                    <li style="padding: 0.7rem 0; border-bottom: 1px solid #eee;">
+                        <a href="#" style="color: #333; text-decoration: none; font-size: 0.95rem;">Come diventare Full-Stack Developer</a>
+                    </li>
+                    <li style="padding: 0.7rem 0; border-bottom: 1px solid #eee;">
+                        <a href="#" style="color: #333; text-decoration: none; font-size: 0.95rem;">CSS Grid vs Flexbox: Quale usare?</a>
+                    </li>
+                    <li style="padding: 0.7rem 0;">
+                        <a href="#" style="color: #333; text-decoration: none; font-size: 0.95rem;">10 Trucchi JavaScript che Devi Conoscere</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>Tags</h3>
+                <div class="tags">
+                    <a href="#" class="tag">HTML</a>
+                    <a href="#" class="tag">CSS</a>
+                    <a href="#" class="tag">JavaScript</a>
+                    <a href="#" class="tag">Python</a>
+                    <a href="#" class="tag">React</a>
+                    <a href="#" class="tag">Node.js</a>
+                    <a href="#" class="tag">Design</a>
+                    <a href="#" class="tag">UX</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tech Blog Italia - Tutti i diritti riservati</p>
+        <p>Seguici su: Twitter | LinkedIn | GitHub</p>
+    </footer>
+</body>
+</html>read-more">Leggi di più →</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800" alt="Web Design">
+                <div class="article-content">
+                    <div class="article-meta">12 Ottobre 2025 • Web Design</div>
+                    <h2><a href="#">Tendenze Web Design 2025</a></h2>
+                    <p>Il mondo del web design è in continua evoluzione. Quest'anno abbiamo visto l'ascesa di nuovi trend che stanno rivoluzionando il modo in cui progettiamo i siti web. Dal minimalismo audace alle animazioni micro-interattive, scopriamo insieme cosa ci riserva il futuro del design digitale.</p>
+                    <a href="#" class="
