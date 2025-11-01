@@ -173,3 +173,92 @@ Allinea righe multiple quando c'è wrap: `stretch`, `flex-start`, `flex-end`, `c
 
 #### Align
 `align-self` permette override di `align-items` per singolo item. Valori: `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`. Allinea lungo asse trasversale.
+
+# Grid
+
+## Proprietà container
+
+### Grid Display
+`display: grid` (o `inline-grid`) attiva il grid sul container. Trasforma figli in grid items con layout flessibile bidimensionale (righe e colonne).
+
+### Grid Template Columns
+`grid-template-columns` definisce larghezza e numero delle colonne: valori fissi (`200px`), flessibili (`1fr`), percentuali, `auto`. Usa `repeat(3, 1fr)` per pattern ripetuti.
+
+### Grid Template Rows
+`grid-template-rows` definisce altezza e numero delle righe. Sintassi identica a columns: `100px auto 1fr`. Le righe possono essere implicite se non definite.
+
+### Grid Template Areas
+`grid-template-areas` definisce layout tramite stringhe di testo. Ogni stringa = riga. Ripetere nomi crea aree multi-cella: `"header header" "sidebar main"`. Usa `.` per celle vuote.
+
+### Grid Template
+Shorthand per `grid-template-rows`, `grid-template-columns` e `grid-template-areas`: `grid-template: "header" 100px "main" 1fr / 200px 1fr`. Divide rows/columns con `/`.
+
+### Grid Gap / Gap
+`gap` (o `grid-gap`) imposta spaziatura tra righe/colonne: `gap: 20px` (uguale) o `gap: 20px 10px` (row column). Sostituisce `grid-row-gap` e `grid-column-gap`.
+
+### Justify Items
+Allinea items orizzontalmente dentro le celle: `start`, `end`, `center`, `stretch` (default, riempie cella). Agisce su asse inline (colonne).
+
+### Align Items
+Allinea items verticalmente dentro le celle: `start`, `end`, `center`, `stretch` (default). Agisce su asse block (righe). Allineamento dentro singola cella.
+
+### Justify Content
+Allinea l'intera griglia orizzontalmente nel container: `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`. Utile quando griglia < container.
+
+### Align Content
+Allinea l'intera griglia verticalmente nel container: `start`, `end`, `center`, `stretch`, `space-between`, `space-around`, `space-evenly`. Distribuisce spazio extra tra righe.
+
+### Grid Auto Columns
+`grid-auto-columns` definisce dimensione delle colonne implicite (create automaticamente). Default `auto`. Valori: `100px`, `1fr`, `minmax(100px, 1fr)`.
+
+### Grid Auto Rows
+`grid-auto-rows` definisce dimensione delle righe implicite. Utile quando items superano righe definite. Esempio: `grid-auto-rows: 150px` crea righe uniformi.
+
+### Grid Auto Flow
+`grid-auto-flow` controlla posizionamento automatico: `row` (default, riempie righe), `column` (riempie colonne), `dense` (riempie buchi, modifica ordine visuale).
+
+## Proprietà elementi figli
+
+### Grid Column Start / End
+`grid-column-start` e `grid-column-end` posizionano item sulle linee verticali: `grid-column-start: 1; grid-column-end: 3`. Le linee partono da 1. Usa `span 2` per estensione relativa.
+
+### Grid Row Start / End
+`grid-row-start` e `grid-row-end` posizionano item sulle linee orizzontali. Sintassi identica a column. Esempio: `grid-row: 1 / 4` (shorthand).
+
+### Grid Column
+Shorthand per `grid-column-start` e `grid-column-end`: `grid-column: 1 / 3` o `grid-column: 1 / span 2`. Posiziona item su range di colonne.
+
+### Grid Row
+Shorthand per `grid-row-start` e `grid-row-end`: `grid-row: 2 / 4` o `grid-row: span 2`. Posiziona item su range di righe.
+
+### Grid Area
+Shorthand per tutte le proprietà di posizionamento: `grid-area: row-start / col-start / row-end / col-end` oppure nome area: `grid-area: header` (da `grid-template-areas`).
+
+### Justify Self
+`justify-self` override di `justify-items` per singolo item. Valori: `start`, `end`, `center`, `stretch`. Allinea item orizzontalmente nella propria cella.
+
+### Align Self
+`align-self` override di `align-items` per singolo item. Valori: `start`, `end`, `center`, `stretch`. Allinea item verticalmente nella propria cella.
+
+### Place Self
+Shorthand per `align-self` e `justify-self`: `place-self: center` (entrambi) o `place-self: start end` (align justify). Centra o posiziona item in cella.
+
+## Funzioni e valori utili
+
+### Repeat
+`repeat(count, size)` ripete pattern: `repeat(3, 1fr)` = `1fr 1fr 1fr`. Usa `auto-fit` o `auto-fill` per colonne responsive: `repeat(auto-fit, minmax(200px, 1fr))`.
+
+### Minmax
+`minmax(min, max)` definisce range dimensioni: `minmax(100px, 1fr)` (minimo 100px, cresce con spazio disponibile). Previene collassi e overflow.
+
+### Fr Unit
+`fr` (fraction) distribuisce spazio disponibile proporzionalmente. `1fr 2fr` = 1/3 e 2/3 della larghezza. Flessibile e responsive, considera gap automaticamente.
+
+### Auto-fit vs Auto-fill
+`auto-fit` collassa tracce vuote, `auto-fill` le mantiene. Con `repeat(auto-fit, minmax(200px, 1fr))` crea layout responsive senza media query. Tracce si adattano al container.
+
+### Media Query
+
+Le media query adattano il layout grid a diverse dimensioni schermo. Modificano `grid-template-columns/rows`, `gap`, o passano da grid multi-colonna a singola colonna su mobile.
+
+Esempio comune: `@media (max-width: 768px) { grid-template-columns: 1fr; }` imposta layout a colonna singola. Usa `min-width` per approccio mobile-first progressivo.
