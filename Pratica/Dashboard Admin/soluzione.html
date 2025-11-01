@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr 1fr 1fr;
+            grid-template-rows: 70px 1fr 1fr 1fr;
+            grid-template-areas:
+                "sidebar header header header"
+                "sidebar stats1 stats2 stats3"
+                "sidebar chart chart activity"
+                "sidebar chart chart activity";
+            gap: 20px;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 15px;
+            padding: 30px 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        .nav-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-item.active {
+            background: #3498db;
+        }
+
+        .header {
+            grid-area: header;
+            background: white;
+            border-radius: 15px;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 1.8em;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats1 { grid-area: stats1; }
+        .stats2 { grid-area: stats2; }
+        .stats3 { grid-area: stats3; }
+
+        .stat-title {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .stat-change {
+            font-size: 0.9em;
+            color: #27ae60;
+        }
+
+        .stat-change.negative {
+            color: #e74c3c;
+        }
+
+        .chart {
+            grid-area: chart;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: calc(100% - 60px);
+            gap: 10px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .bar:hover {
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transform: scaleY(1.05);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+
+        .activity {
+            grid-area: activity;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        .activity h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .activity-item {
+            padding: 15px;
+            border-left: 3px solid #3498db;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .activity-time {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .activity-desc {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                grid-template-areas:
+                    "header"
+                    "stats1"
+                    "stats2"
+                    "stats3"
+                    "chart"
+                    "activity";
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">⚡ Admin</div>
+            <nav>
+                <div class="nav-item active">📊 Dashboard</div>
+                <div class="nav-item">👥 Utenti</div>
+                <div class="nav-item">📈 Analytics</div>
+                <div class="nav-item">💰 Vendite</div>
+                <div class="nav-item">📦 Prodotti</div>
+                <div class="nav-item">⚙️ Impostazioni</div>
+            </nav>
+        </aside>
+
+        <header class="header">
+            <h1>Dashboard Panoramica</h1>
+            <div class="user-info">
+                <span>Admin User</span>
+                <div class="avatar">AU</div>
+            </div>
+        </header>
+
+        <div class="stat-card stats1">
+            <div class="stat-title">Visite Totali</div>
+            <div class="stat-value">48,574</div>
+            <div class="stat-change">↑ 12.5% dal mese scorso</div>
+        </div>
+
+        <div class="stat-card stats2">
+            <div class="stat-title">Nuovi Utenti</div>
+            <div class="stat-value">2,847</div>
+            <div class="stat-change">↑ 8.3% dal mese scorso</div>
+        </div>
+
+        <div class="stat-card stats3">
+            <div class="stat-title">Entrate</div>
+            <div class="stat-value">€32,459</div>
+            <div class="stat-change negative">↓ 3.2% dal mese scorso</div>
+        </div>
+
+        <div class="chart">
+            <h2>Statistiche Settimanali</h2>
+            <div class="chart-bars">
+                <div class="bar" style="height: 70%;">
+                    <span class="bar-label">Lun</span>
+                </div>
+                <div class="bar" style="height: 85%;">
+                    <span class="bar-label">Mar</span>
+                </div>
+                <div class="bar" style="height: 60%;">
+                    <span class="bar-label">Mer</span>
+                </div>
+                <div class="bar" style="height: 90%;">
+                    <span class="bar-label">Gio</span>
+                </div>
+                <div class="bar" style="height: 75%;">
+                    <span class="bar-label">Ven</span>
+                </div>
+                <div class="bar" style="height: 50%;">
+                    <span class="bar-label">Sab</span>
+                </div>
+                <div class="bar" style="height: 45%;">
+                    <span class="bar-label">Dom</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h2>Attività Recenti</h2>
+            <div class="activity-item">
+                <div class="activity-time">5 minuti fa</div>
+                <div class="activity-desc">Nuovo ordine da Mario Rossi</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-time">23 minuti fa</div>
+                <div class="activity-desc">Utente registrato: lucia.verdi@email.com</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-time">1 ora fa</div>
+                <div class="activity-desc">Prodotto aggiunto al catalogo</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-time">2 ore fa</div>
+                <div class="activity-desc">Pagamento ricevuto: €450.00</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-time">3 ore fa</div>
+                <div class="activity-desc">Report mensile generato</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-time">4 ore fa</div>
+                <div class="activity-desc">Sistema aggiornato alla v2.1.5</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

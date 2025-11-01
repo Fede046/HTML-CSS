@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivista Digitale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .magazine-header {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        .magazine-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 5px;
+            font-family: 'Palatino', serif;
+        }
+
+        .magazine-date {
+            font-size: 0.9em;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(150px, auto);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .article {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .featured {
+            grid-column: span 8;
+            grid-row: span 3;
+        }
+
+        .secondary {
+            grid-column: span 4;
+            grid-row: span 3;
+        }
+
+        .tertiary {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        .small {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+
+        .wide {
+            grid-column: span 6;
+            grid-row: span 2;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+            grid-row: span 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .featured .article-image {
+            height: 70%;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-category {
+            color: #d4af37;
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .article-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .featured .article-title {
+            font-size: 2.2em;
+        }
+
+        .article-excerpt {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        .sidebar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-item {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .featured {
+                grid-column: span 6;
+                grid-row: span 3;
+            }
+
+            .secondary {
+                grid-column: span 6;
+                grid-row: span 2;
+            }
+
+            .tertiary, .wide {
+                grid-column: span 6;
+                grid-row: span 2;
+            }
+
+            .small {
+                grid-column: span 3;
+            }
+
+            .sidebar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured,
+            .secondary,
+            .tertiary,
+            .wide,
+            .small {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .article-image {
+                height: 200px;
+            }
+
+            .magazine-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="magazine-header">
+        <h1 class="magazine-title">PANORAMA</h1>
+        <p class="magazine-date">Novembre 2024 | Anno XII | N° 145</p>
+    </header>
+
+    <div class="container">
+        <div class="main-grid">
+            <article class="article featured">
+                <div class="article-image">IMMAGINE PRINCIPALE</div>
+                <div class="article-content">
+                    <div class="article-category">Attualità</div>
+                    <h2 class="article-title">La rivoluzione digitale che sta cambiando il mondo</h2>
+                    <p class="article-excerpt">Un'analisi approfondita su come la tecnologia sta trasformando ogni aspetto della nostra vita quotidiana, dal lavoro alle relazioni sociali.</p>
+                    <div class="article-meta">
+                        <span>di Marco Bianchi</span>
+                        <span>10 min di lettura</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article secondary">
+                <div class="article-image">TECNOLOGIA</div>
+                <div class="article-content">
+                    <div class="article-category">Tech</div>
+                    <h2 class="article-title">Intelligenza Artificiale: opportunità e sfide</h2>
+                    <p class="article-excerpt">Come l'IA sta rivoluzionando industrie e società.</p>
+                    <div class="article-meta">
+                        <span>di Laura Verdi</span>
+                        <span>7 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article tertiary">
+                <div class="article-image">CULTURA</div>
+                <div class="article-content">
+                    <div class="article-category">Arte</div>
+                    <h2 class="article-title">Mostre imperdibili dell'autunno</h2>
+                    <p class="article-excerpt">Gli eventi culturali da non perdere.</p>
+                    <div class="article-meta">
+                        <span>di Anna Rossi</span>
+                        <span>5 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article tertiary">
+                <div class="article-image">VIAGGI</div>
+                <div class="article-content">
+                    <div class="article-category">Travel</div>
+                    <h2 class="article-title">Destinazioni esotiche per l'inverno</h2>
+                    <p class="article-excerpt">Dove andare per fuggire dal freddo.</p>
+                    <div class="article-meta">
+                        <span>di Giovanni Neri</span>
+                        <span>6 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article tertiary">
+                <div class="article-image">ECONOMIA</div>
+                <div class="article-content">
+                    <div class="article-category">Business</div>
+                    <h2 class="article-title">Mercati finanziari: previsioni 2025</h2>
+                    <p class="article-excerpt">Analisi degli esperti sul futuro economico.</p>
+                    <div class="article-meta">
+                        <span>di Paolo Ferrari</span>
+                        <span>8 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <div class="article full-width">
+                📰 ABBONATI OGGI E RICEVI IL 40% DI SCONTO
+            </div>
+
+            <article class="article small">
+                <div class="article-image">SPORT</div>
+                <div class="article-content">
+                    <div class="article-category">Calcio</div>
+                    <h2 class="article-title">Champions League: chi vincerà?</h2>
+                    <div class="article-meta">
+                        <span>3 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article small">
+                <div class="article-image">SALUTE</div>
+                <div class="article-content">
+                    <div class="article-category">Benessere</div>
+                    <h2 class="article-title">Dieta mediterranea: benefici provati</h2>
+                    <div class="article-meta">
+                        <span>4 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article small">
+                <div class="article-image">MODA</div>
+                <div class="article-content">
+                    <div class="article-category">Style</div>
+                    <h2 class="article-title">Tendenze autunno-inverno</h2>
+                    <div class="article-meta">
+                        <span>5 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article small">
+                <div class="article-image">FOOD</div>
+                <div class="article-content">
+                    <div class="article-category">Cucina</div>
+                    <h2 class="article-title">Ricette vegane facili e gustose</h2>
+                    <div class="article-meta">
+                        <span>6 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article wide">
+                <div class="article-image">INTERVISTA</div>
+                <div class="article-content">
+                    <div class="article-category">Personaggi</div>
+                    <h2 class="article-title">Incontro con il premio Nobel per la Fisica 2024</h2>
+                    <p class="article-excerpt">Una conversazione esclusiva sulla ricerca scientifica e il futuro della fisica quantistica.</p>
+                    <div class="article-meta">
+                        <span>di Silvia Monti</span>
+                        <span>12 min di lettura</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article wide">
+                <div class="article-image">AMBIENTE</div>
+                <div class="article-content">
+                    <div class="article-category">Sostenibilità</div>
+                    <h2 class="article-title">Energia rinnovabile: l'Italia verso il futuro green</h2>
+                    <p class="article-excerpt">I progressi del nostro paese nella transizione ecologica e le sfide che ci attendono.</p>
+                    <div class="article-meta">
+                        <span>di Luca Galli</span>
+                        <span>9 min di lettura</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="sidebar-grid">
+            <div class="sidebar-item">
+                <h3 class="sidebar-title">Più Letti</h3>
+                <ul class="sidebar-list">
+                    <li>L'intelligenza artificiale nel 2024</li>
+                    <li>Guida ai migliori smartphone</li>
+                    <li>Investire in criptovalute</li>
+                    <li>Le serie TV da vedere</li>
+                    <li>Consigli per viaggiare low cost</li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <h3 class="sidebar-title">Categorie</h3>
+                <ul class="sidebar-list">
+                    <li>🔬 Scienza e Tech</li>
+                    <li>🎨 Arte e Cultura</li>
+                    <li>💼 Economia</li>
+                    <li>⚽ Sport</li>
+                    <li>🌍 Ambiente</li>
+                </ul>
+            </div>
+            <div class="sidebar-item">
+                <h3 class="sidebar-title">Newsletter</h3>
+                <p style="margin-bottom: 15px; color: #666;">Ricevi le ultime notizie direttamente nella tua casella email.</p>
+                <p style="background: #d4af37; color: white; padding: 12px; text-align: center; font-weight: bold; cursor: pointer;">ISCRIVITI ORA</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Panorama Magazine | Tutti i diritti riservati</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Privacy Policy | Termini di Servizio | Contatti</p>
+    </footer>
+</body>
+</html>

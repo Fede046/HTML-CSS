@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fotografico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .gallery-item:nth-child(7) {
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(10) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(7),
+            .gallery-item:nth-child(10) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Studio Fotografico</h1>
+            <p class="subtitle">Catturare momenti, creare ricordi</p>
+        </header>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="img-wrapper">Paesaggio</div>
+                <div class="caption">
+                    <h3>Montagne al Tramonto</h3>
+                    <p>Dolomiti, Italia</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Ritratto</div>
+                <div class="caption">
+                    <h3>Espressioni</h3>
+                    <p>Studio Session</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Natura</div>
+                <div class="caption">
+                    <h3>Fiori Selvatici</h3>
+                    <p>Primavera 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Architettura</div>
+                <div class="caption">
+                    <h3>Geometrie Urbane</h3>
+                    <p>Milano, Italia</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Animali</div>
+                <div class="caption">
+                    <h3>Vita Selvatica</h3>
+                    <p>Safari Fotografico</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Mare</div>
+                <div class="caption">
+                    <h3>Onde al Tramonto</h3>
+                    <p>Costa Amalfitana</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Città</div>
+                <div class="caption">
+                    <h3>Luci Notturne</h3>
+                    <p>Roma by Night</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Food</div>
+                <div class="caption">
+                    <h3>Gastronomia</h3>
+                    <p>Cucina Italiana</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Arte</div>
+                <div class="caption">
+                    <h3>Dettagli Artistici</h3>
+                    <p>Galleria d'Arte</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Eventi</div>
+                <div class="caption">
+                    <h3>Matrimonio</h3>
+                    <p>Celebrazioni 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Moda</div>
+                <div class="caption">
+                    <h3>Fashion Week</h3>
+                    <p>Milano 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-wrapper">Sport</div>
+                <div class="caption">
+                    <h3>Azione</h3>
+                    <p>Momenti Dinamici</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Studio Fotografico | Tutti i diritti riservati</p>
+        </footer>
+    </div>
+</body>
+</html>
