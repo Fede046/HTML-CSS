@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial,'sans-serif';
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1.5fr 3fr ;
+    grid-template-areas: 
+    "Indice  Utente Utente Utente"
+    "Indice  Movimenti1 Movimenti2 Movimenti3"
+    "Indice  Statistiche Statistiche Attivita"
+    ;
+    padding: 1rem;
+    gap: 1rem;
+    height: 96vh;
+}
+/*-----------------------------*/
+header{
+    grid-area: Utente;
+    border: 2px solid rgb(221, 182, 182);
+    border-radius: 15px;
+    display:grid;
+    align-items: center;
+    grid-template-columns:70% 25% 5%;
+    grid-template-rows: 100% ;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.2rem;
+}
+
+header h1{
+    font-size: 1.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+}
+
+header p{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: right;
+
+}
+
+header img{
+    position: static;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid; 
+}
+
+
+/*-------------------------*/
+
+nav{
+    grid-area: Indice;
+    background-color: rgb(74, 74, 83);
+    border: 2px salmon solid;
+    padding: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 15px;
+}
+
+nav h1{
+    color: rgb(96, 96, 173);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    color: white;
+}
+
+nav li{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+nav ul li:nth-child(1){
+    background-color: rgb(24, 114, 114);
+}
+nav ul li:hover{
+    background-color: green;
+}
+
+/*--------------------*/
+
+
+
+.Movimenti{
+    border: 2px solid green;
+    padding: 1rem;
+    border-radius: 15px;
+}
+.Movimenti:nth-child(3){
+    grid-area: Movimenti3;
+}
+.Movimenti:nth-child(4){
+    grid-area: Movimenti2;
+}
+.Movimenti:nth-child(5){
+    grid-area: Movimenti1;
+}
+.Movimenti p{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+.Movimenti h1{
+    margin-bottom: 1rem;
+    font-size:3rem;
+}
+
+/*--------------------------------*/
+
+
+.Statistiche{
+    grid-area: Statistiche;
+    display: grid;
+    border: 2px solid green;
+    border-radius: 15px;
+    padding: 1rem;
+
+    grid-template-rows:0.1fr 1fr;
+}
+.Statistiche h1{
+    
+    font-size: 1,5rem;
+    margin-bottom: 1rem;
+}
+
+.Grafico{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.gior{
+    display: grid;
+    grid-template-rows: 95% 5%;
+    align-items: end;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.Grafico .gior div{
+    width: 100%;
+    background-color: green;
+    border-radius: 10px 10px 0 0;
+}
+.Grafico .gior:hover{
+    transform: scale(1.1);
+}
+
+
+/*-------------------------------*/
+
+.Attivita{
+    grid-area: Attivita;
+    border: 2px solid green;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.Attivita ul{
+    overflow: auto;
+}
+.Attivita ul div{
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-left: 3px solid gray;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+.Attivita ul div p{
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+.Attivita ul div h2{
+    font-size: 1rem; 
+}
+
+/*---------------------------*/
+
+@media (max-width: 42em){
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas: 
+        "Utente"
+        "Indice"
+        "Movimenti1"
+        "Movimenti2"
+        "Movimenti3"
+        "Statistiche"
+        "Attivita"
+        ;
+    }
+}
+
+
+
+
+
+
