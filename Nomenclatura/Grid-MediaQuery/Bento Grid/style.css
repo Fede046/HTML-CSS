@@ -1,4 +1,4 @@
-body{
+body {
     min-height: 100dvh;
     display: flex;
     align-items: center;
@@ -6,46 +6,48 @@ body{
     padding: 2%;
 }
 
-.item{
+.item {
     background-color: rgb(68, 124, 237);
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     /*Si potrebbe usare anche grid-auto-...*/
     /*al posto di metterlo sempre*/
     grid-template-columns: 200px 200px 200px 200px;
     grid-template-rows: 200px 200px;
-    gap:1em;
-/*grid-template-area -> definisce l'intera struttura del lyout utilizzando 
+    gap: 1em;
+    /*grid-template-area -> definisce l'intera struttura del lyout utilizzando 
 le stringhe di testo. Ogni stringa rappresenta una riga della griglia.
 Ripetere lo stesso nome di area in celle adiacenti fa si che quell'elemento
 si estenda su più celle.*/
 
-  grid-template-areas:
-    "box-1 box-2 box-2 box-3"
-    "box-1 box-4 box-5 box-5";
-}
-/*Per tablet*/
-@media(max-width:56em){
-    .grid-container{
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px;
     grid-template-areas:
-    "box-1 box-1 box-2"
-    "box-1 box-1 box-3"
-    "box-4 box-5 box-5";
+        "box-1 box-2 box-2 box-3"
+        "box-1 box-4 box-5 box-5";
+}
+
+/*Per tablet*/
+@media(max-width:56em) {
+    .grid-container {
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+        grid-template-areas:
+            "box-1 box-1 box-2"
+            "box-1 box-1 box-3"
+            "box-4 box-5 box-5";
     }
 }
+
 /*per cellulare*/
-@media(max-width:42em){
-    .grid-container{
-    grid-template-columns: 200px 200px ;
-    grid-template-rows: 200px 200px 200px 200px;
-    grid-template-areas:
-    "box-1 box-2"
-    "box-3 box-2"
-    "box-3 box-4"
-    "box-5 box-4";
+@media(max-width:42em) {
+    .grid-container {
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 200px 200px 200px 200px;
+        grid-template-areas:
+            "box-1 box-2"
+            "box-3 box-2"
+            "box-3 box-4"
+            "box-5 box-4";
     }
 }
