@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial';
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+        }
+
+        header {
+            color: white;
+            padding: 3rem;
+        }
+
+        header h1 {
+            font-size: 5rem;
+        }
+
+        /*-------------------*/
+        main {
+
+            padding: 1rem;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            background-color: white;
+            padding: 1rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        section>p {
+            padding: 1rem;
+        }
+
+        section div {
+            padding: 1rem
+        }
+
+        section div:nth-child(1) a {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1rem;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        section div:nth-child(2) a {
+            text-decoration: none;
+            font-size: 2rem;
+            color: black;
+        }
+
+        /*--------*/
+        @media(max-width:992px) {
+            section {
+                grid-template-columns: 100%;
+                grid-template-rows: 1fr 2fr 1fr 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/sfondo.jpg">
+
+    <header>
+        <h1>Piante e amore</h1>
+        <h2 style="font-family: 'Georgia">Dai un occhiata alle piante</h2>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <a href="dettagli-pianta.html”">Acquista</a>
+            </div>
+            <div>
+                <a href="">Abelia</a>
+                <p>Per ottenere gli elementi unici in un array JavaScript, puoi utilizzare diverse tecniche. Un
+                    approccio comune prevede l'utilizzo di un ciclo e di un oggetto per tenere traccia degli elementi
+                    già incontrati. </p>
+            </div>
+            <div>
+                <p>Temperatura minima:</p>
+                <p>- 2 Celsius</p>
+                <p>Altezza Massima: 100-120 cm</p>
+            </div>
+            <p>Origine Asiatica</p>
+        </section>
+        <section>
+            <div>
+                <a href="dettagli-pianta.html”">Acquista</a>
+            </div>
+            <div>
+                <a href="">Abelia</a>
+                <p>Per ottenere gli elementi unici in un array JavaScript, puoi utilizzare diverse tecniche. Un
+                    approccio comune prevede l'utilizzo di un ciclo e di un oggetto per tenere traccia degli elementi
+                    già incontrati. </p>
+            </div>
+            <div>
+                <p>Temperatura minima: 2 Celsius</p>
+                <p>Altezza Massima: 100-120 cm</p>
+            </div>
+            <p>Origine Asiatica</p>
+        </section>
+        <section>
+            <div>
+                <a href="dettagli-pianta.html”">Acquista</a>
+            </div>
+            <div>
+                <a href="">Abelia</a>
+                <p>Per ottenere gli elementi unici in un array JavaScript, puoi utilizzare diverse tecniche. Un
+                    approccio comune prevede l'utilizzo di un ciclo e di un oggetto per tenere traccia degli elementi
+                    già incontrati. </p>
+            </div>
+            <div>
+                <p>Temperatura minima: 2 Celsius</p>
+                <p>Altezza Massima: 100-120 cm</p>
+            </div>
+            <p>Origine Asiatica</p>
+        </section>
+    </main>
+
+</body>
+
+</html>
