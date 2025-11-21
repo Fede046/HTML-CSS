@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Titolo</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            body{
+                background-color:rgb(224, 124, 124);
+                display: flex;
+            }
+            a{
+                text-decoration:none;
+                color: black;
+            }
+            nav{
+                position: fixed;
+                width:80vw;
+                height:2rem;
+                overflow:auto;
+                display: flex;
+                gap:1rem;
+                font-size: 0.8rem;
+                z-index:10;
+                background-color: white;
+            }
+            nav p{
+                border-bottom:2px solid transparent;
+                transition: all 0.3s;
+
+            }
+            nav p:hover{
+                border-bottom:2px solid black;
+            }
+            /*--------------------------*/
+
+            main{
+                
+                display:flex;
+                margin-top:2rem;
+            }
+            main section:nth-child(1){
+                
+                display:flex;
+                width:15vw;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.5rem;
+                padding-top: 1rem;
+            }
+            section:nth-child(1) img {
+                width:100%;
+                height:10vh;
+                border:2px solid transparent;
+            }
+            /*--------------*/
+            section:nth-child(2){
+                width:65vw;
+                padding: 1rem;
+            }
+            section:nth-child(2) img{
+                width:100%;
+                height:45vw;
+                border:2px solid transparent;
+            }
+            /*--------------*/
+            section:nth-child(3){
+                width:25vw;
+                padding: 1rem;
+            }
+            section:nth-child(2) img:hover,
+            section:nth-child(1) img:hover{
+                border:2px solid black;
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <nav>
+
+            <p><a href="">Acquista Prodotti</a></p>
+            <p><a href="">Esplora Prodotti</a></p>
+            <p><a href="">Offerte</a></p>
+
+            <p><a href="">Ispirazione</a></p>
+            <p><a href="">IKE for Business</a></p>
+            
+            <p><a href="">Progettazione e servizi</a></p>
+            <p><a href="">Altro</a></p>
+        </nav>
+
+
+        <main>
+            <section>
+                <img src="img/sedia (6).jpg" onClick="scambia(0)">
+                <img src="img/sedia (1).jpg" onClick="scambia(1)">
+                <img src="img/sedia (2).jpg" onClick="scambia(2)">
+                <img src="img/sedia (3).jpg" onClick="scambia(3)">
+                <img src="img/sedia (4).jpg" onClick="scambia(4)">
+                <img src="img/sedia (5).jpg" onClick="scambia(5)">
+            </section>
+
+            <section>
+                
+            </section>
+
+            <section>
+                <p>Novità</p>
+                <h1>SEDIA</h1>
+                <p>Sedia blu</p>
+                <h1>45,23$</h1>
+                <p>Scegli le sedie del nostro assortimento: ti offrono un comfort ottimale e sono disponibili in diversi stili, da quello classico a quello moderno; progettate per abbinarsi ai nostri tavoli, ti permettono di creare una zona pranzo, cucina o sala perfettamente coordinata. Trova le sedie più adatte alle tue esigenze tra le diverse combinazioni.</p>
+            </section>
+        </main>
+
+        <script>
+            
+            let mySrc=['img/sedia (6).jpg','img/sedia (1).jpg',
+                'img/sedia (2).jpg','img/sedia (3).jpg','img/sedia (4).jpg','img/sedia (5).jpg'
+            ];
+
+            function scambia(number){
+                const mySection = document.getElementsByTagName('section')[1];
+                mySection.innerHTML = '';
+                
+                let myImg = document.createElement('img');
+                myImg.src = mySrc[number];
+
+                mySection.appendChild(myImg);
+            }
+
+            
+            
+            scambia(0);
+        </script>
+    </body>
+</html>
