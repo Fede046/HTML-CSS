@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Doc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        header {
+            display: grid;
+            grid-template-columns: 1fr 7fr 1fr;
+            height: auto;
+            width: 100%;
+            border: 1px solid red;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        header img {
+            height: 100%;
+            width: 100px;
+        }
+
+        header button {
+            color: white;
+            background-color: blue;
+        }
+
+        header button:hover {
+            background-color: skyblue;
+        }
+
+        /*----------------*/
+        a {
+            text-decoration: none;
+            color: white
+        }
+
+        nav {
+            height: 50px;
+            width: 100%;
+            position: relative;
+            padding: 1rem;
+            background-color: black;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        /*----------------------*/
+
+        main {
+            display: flex;
+            position: relative;
+            height: 30vh;
+
+
+
+        }
+
+        main img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        main div {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            z-index: 2;
+
+            gap: 1rem;
+            padding-left: 1rem;
+        }
+
+        main div button {
+            width: 20%;
+        }
+
+        /*----------------*/
+
+
+        footer {
+            display: flex;
+            padding: 1rem 2rem 1rem 2rem;
+            height: 60vh;
+            width: 100%;
+            gap: 1rem;
+
+
+        }
+
+        footer div {
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+        }
+
+        footer div div {
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            z-index: 2;
+            gap: 1rem;
+            padding-left: 1rem;
+        }
+
+        footer div div button {
+            width: 20%;
+        }
+
+        footer div img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png">
+        <input type="text">
+        <button>Sign In</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><select>
+                    <option>Magic</option>
+                </select></li>
+            <li><select>
+                    <option>Yu-Gi-Ho</option>
+                </select></li>
+            <li><select>
+                    <option>Pokemon</option>
+                </select></li>
+            <li><select>
+                    <option>Disney Lorcana</option>
+                </select></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <img src="img/pokemon.png">
+        <div>
+            <h1>SV: Prismatic Evolution</h1>
+            <p>12-12-2004</p>
+            <button>Preorder Now</button>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <img src="img/pokemon.png">
+            <div>
+                <h1>Budget Builds For Set</h1>
+                <button>Read Now</button>
+            </div>
+        </div>
+
+        <div>
+            <img src="img/pokemon.png">
+            <div>
+                <h1>Budget Builds For Set</h1>
+                <button>Read Now</button>
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
