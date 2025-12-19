@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Esercizio individuale - Pagina con gatto</title>
+        <style>
+        	/* General Styles */
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh; /* L'altezza del body occupa almeno l'intera altezza della viewport -> 
+    Serve a evitare che il body risulti più basso della finestra se il contenuto è poco (ad esmepio, in una pagina con poco testo). */
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Spaziatura tra le linee del testo per una migliore leggibilità */
+    display: flex;
+    flex-direction: column; /* Disposizione degli elementi interni in colonna */
+    background-color: black;
+    color:white;
+}	
+
+/* Header Styles */
+header {
+	height:10vh;
+    display: flex; /* Layout flex per posizionare logo e menu in una riga */
+    gap:10%;
+    align-items: center; /* Allinea verticalmente al centro */
+    background-color: #2c2f48;
+    color: #ffffff;
+    padding: 20px 40px; /* Spaziatura interna dell'header ([sopra/sotto] [sx/dx]) */
+    flex-shrink: 0; 
+    padding-left: 10%;
+}
+
+header img{
+	width:100px;
+	display: block;
+	height: 80%;
+}
+header input{
+		width:80%;
+		padding:0.5rem;
+}
+nav ul li a:hover {
+			color: #a0c4ff;
+    	}
+			
+/*---------------------*/
+main{
+	height:90vh;
+	display:grid;
+	grid-template-columns: 4fr 1fr;
+	gap:1rem;
+	padding:1rem;
+	padding-left: 10%;
+	padding-right: 10%;
+	
+}
+main > a{
+	height:100%;
+	width:100%;
+	position:relative;
+	display:flex;
+	align-items:end;
+	gap:1rem;
+}
+main >a img:nth-child(1){
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:-1;
+}
+main > a img:nth-child(2){
+	width:20%;
+	height:40%;
+	display:block;
+}
+span{
+	font-weight:100;
+	font-size: 1rem;
+}
+/*-------------------*/
+section:nth-child(2){
+	height:100%;
+	width:100%;
+	display:flex;
+	align-items:center;
+	gap:1rem;
+	overflow: auto;
+	flex-direction:column;
+	
+}
+section:nth-child(2) > a{
+	background-color: gray;
+	padding:1rem;
+	width:100%;
+	height: 20%;
+	display:flex;
+	gap:1rem;
+	justify-content:center;
+	font-size:0.5rem;
+}
+section:nth-child(2) > a img{
+	height:100%;
+	width:30%;
+	display:block;
+}
+a{
+	text-decoration: none;	
+	color:white;
+}
+
+@media(max-width:768px){
+	header input{
+		display:none;	
+	}
+	main{
+		display: flex;
+		flex-direction: column;
+		gap:1rem;
+		
+	}
+
+}
+
+
+        </style>
+    </head>
+    <body>
+        <!-- Sezione Header -->
+        <header>
+            <img src='img/ragazza.avif'>
+            
+                <input type='text'>
+            
+        </header>
+        
+        <main>
+        	<a href=''>
+        		<img src='img/ragazza.avif'>
+        		<img src='img/ragazza.avif'>
+        		<div> 
+        			<h1>The perfect Couple<span>123 min</span></h1>	
+        			
+        			<p>4/5</p>
+        			<p>Watch the trailer</p>
+        		</div>	
+        	</a>
+        	<section>
+        		
+        			<a href=''>
+        			<img src='img/ragazza.avif'>
+        			<div>
+        				<h1>The perfect Couple</h1>	
+        				<p>4/5</p>
+        				<p>Watch the trailer</p>
+        			</div>
+        			</a>
+        		
+        	
+        			<a href=''>
+        			<img src='img/ragazza.avif'>
+        			<div>
+        				<h1>The perfect Couple</h1>	
+        				<p>4/5</p>
+        				<p>Watch the trailer</p>
+        			</div>
+        			</a>
+        		
+        		
+        			<a href=''>
+        			<img src='img/ragazza.avif'>
+        			<div>
+        				<h1>The perfect Couple</h1>	
+        				<p>4/5</p>
+        				<p>Watch the trailer</p>
+        			</div>
+        			</a>
+        		
+        	
+        	</section>
+        </main>
+        
+    </body>
+</html>

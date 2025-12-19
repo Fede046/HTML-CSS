@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Esercizio individuale - Pagina con gatto</title>
+        <style>
+        /* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh; /* L'altezza del body occupa almeno l'intera altezza della viewport -> 
+    Serve a evitare che il body risulti più basso della finestra se il contenuto è poco (ad esmepio, in una pagina con poco testo). */
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Spaziatura tra le linee del testo per una migliore leggibilità */
+    display: flex;
+    flex-direction: column; /* Disposizione degli elementi interni in colonna */
+    background-color: #f5f7fa;
+    
+}
+
+/* Header Styles */
+footer {
+	height:50vh;
+	width:100%;
+    display: flex; /* Layout flex per posizionare logo e menu in una riga */
+     /* Spaziatura tra logo e menu */
+    align-items: center; /* Allinea verticalmente al centro */
+    background-color: gray;
+    color: black;
+    padding: 1rem; /* Spaziatura interna dell'header ([sopra/sotto] [sx/dx]) */
+    flex-shrink: 0; 
+    
+}
+
+
+footer ul {
+	height:100%;
+	width:100%;
+    list-style: none; /* Rimuove i bullet points dalla lista */
+    display: flex; /* Disposizione dei link di footerigazione in orizzontale -> flex-direction: row; [default per display: flex;] */
+    gap:1rem;
+}
+
+footer ul li {
+	height:100%;
+	width:100%;
+    margin-left: 20px; /* Spaziatura tra i link di footerigazione */
+    background-color:red;
+}
+
+footer ul li a {
+	border:2px solid transparent;
+	height:100%;
+	width:100%;
+    color: black;
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    padding:1rem;
+    transition: color 0.3s; /* Transizione morbida del colore in hover */
+    flex-direction:column;
+    display:flex;
+    gap:1rem;
+}
+
+ ul li a:hover {
+    border-color: #a0c4ff;
+}
+footer img{
+	height:50%;
+	width:100%;
+	border-radius:50px;
+}
+footer p{
+	text-align: center;	
+}
+        
+        </style>
+    </head>
+    <body>
+        <!-- Sezione Header -->
+        <footer>
+                <ul>
+                    <li><a href="index.html">
+                    	
+                    		<img src='img/ragazza.avif'>
+                    	
+                    	<p>fedariass</p>
+                    </a></li>
+                    <li><a href="index.html">
+                    	
+                    		<img src='img/ragazza.avif'>
+                    	
+                    	<p>fedariass</p>
+                    </a></li>
+                    <li><a href="index.html">
+                    	
+                    		<img src='img/ragazza.avif'>
+                    	
+                    	<p>fedariass</p>
+                    </a></li>
+                    <li><a href="index.html">
+                    	
+                    		<img src='img/ragazza.avif'>
+                    	
+                    	<p>fedariass</p>
+                    </a></li>
+                </ul>         
+        </footer>
+
+       
+    </body>
+</html>

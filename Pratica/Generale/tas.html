@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+		<meta name='viewport' content='width=device-width,initial-scale=1'>
+		<title>Doc</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			main{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-tempplate-rows: 1fr;
+				height: 100vh;
+				width: 80%;
+				background-color: gray;
+				gap: 1rem;
+				
+			}
+			header{
+				background-color: green;
+				padding: 1rem;
+				display:flex;
+				height: 100%;
+				width: 100%;
+				flex-direction: column;
+				font-size: 2rem;
+			}
+			div{
+				display: flex;
+				width: 100%;
+				gap: 1rem;
+			}
+			input{
+				font-size: 1rem;
+				width:100%;
+				padding: 1rem;
+			}
+			select{
+
+				font-size: 2rem;
+			}
+			footer{
+				padding: 1rem;
+				display:flex;
+				height: 100%;
+				width: 100%;
+				flex-direction: column;
+				font-size: 2rem;	
+				background-color: yellow;
+			}
+			footer > div{
+				background-color: white;
+				height: 100%;
+				width: 100%;
+				margin-top: 1rem;
+				padding: 1rem;
+				overflow: auto;
+				display: lfex;
+				flex-direction: column;
+			}
+			.cella{
+				border: 1px solid black;
+				height: 10%;
+				width: 100%;
+				padding: 1rem;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 1rem;
+				font-size: 1.5rem;
+				background: red;
+			}
+
+			@media(max-width: 700px){
+				main{
+					grid-template-columns: 1fr;
+					grid-tempplate-rows: 1fr 1fr;	
+					height: auto;
+					width: 100%;
+				}
+				
+			}
+			
+			
+		</style>
+		</head>
+		<body>
+			<main>
+				<header>
+					<h1>Profilo</h1>
+					<div>
+						<p>Name</p>
+						<input id='myName' type='text'> 
+					</div>
+					<div>
+						<p>Cognome</p>
+						<input id='mySurn' type='text'> 
+					</div>
+					<div>
+						<p>Sesso</p>
+						<input id='mySex' value='M' name='sesso' type='radio'>
+						<span>M</span>
+						<input id='mySex' value='F' name='sesso' type='radio'>
+						<span>F</span>
+					</div>
+					<div>
+						<p>Data Nascita</p>
+						<input id='myDate' type='date'>
+					</div>
+					<div>
+						<p>Lingua</p>
+						<select id='myLeng'>
+							<option>ITA</option>
+							<option>ENG</option>
+							<option>FRE</option>
+						</select>
+					</div>
+					<div>
+						<p>Numero</p>
+						<select id='myPref'>
+							<option>+33</option>
+							<option>+11</option>
+							<option>+39</option>
+						</select>
+						<input  id='myNum' type='number'>
+					</div>
+					<button onClick='crea()'>Crea</button>
+				</header>
+				
+				<footer>
+					<p>Rubrica</p>
+					<input id='myRicerca' type='text'>
+					<button onClick='cerca()'>Cerca</button>
+					<div id='container'>
+						
+					</div>
+				</footer>
+			
+			</main>
+			
+		<script>
+			
+			let register = [
+			{name:'Francesco',cognome:'Rossi',sesso:'M',data:'01/01/2003',lingua:'ITA',numero:39316811},
+			{name:'Franco',cognome:'Bianchi',sesso:'M',data:'21/01/2013',lingua:'ITA',numero:3916813},
+			{name:'Mattia',cognome:'Rossi',sesso:'F',data:'01/11/2014',lingua:'ENG',numero:39340812}
+			];
+			
+			function start(){
+				loadRegister(register);		
+			}
+			function loadRegister(lista){
+				const myContainer = document.getElementById('container');
+				myContainer.innerHTML = '';
+				for(let i in lista){
+					const myDiv = document.createElement('div');
+					const myName = document.createElement('p');
+					const myNum = document.createElement('p');
+					const myBtn = document.createElement('button');
+					myBtn.style.width= '100%';
+					myBtn.style.height= '100%';
+					myBtn.textContent = 'Rimuovi';
+					
+					myDiv.className = 'cella';
+					myName.textContent = lista[i].name;
+					myNum.textContent = lista[i].numero;
+					myBtn.addEventListener('click',function(){remove(i)});
+					
+					myDiv.appendChild(myName);
+					myDiv.appendChild(myNum);
+					myDiv.appendChild(myBtn);
+					
+					
+					myContainer.appendChild(myDiv);
+				}
+			}
+			function remove(i){
+				register.splice(i,1);
+				loadRegister(register);
+			}
+			function cerca(){
+				const myName = document.getElementById('myRicerca').value;
+				const myContainer = document.getElementById('container');
+				let trovati= [];
+				myContainer.innerHTML = '';
+				for(let i in register){
+					console.log(212);
+					if(register[i].name == myName){
+						trovati.push(register[i]);
+					}
+						
+				}
+				console.log(trovati);
+				loadRegister(trovati);
+			}
+			
+			function crea(){
+				let e = {};
+				
+				const myName = document.getElementById('myName').value;
+				e.name = myName;
+				const mySurn = document.getElementById('mySurn').value;
+				e.cognome  = mySurn;
+				const mySex = document.getElementById('mySex').value;
+				e.sesso = mySex;
+				
+				const myDate = document.getElementById('myDate').value;
+				e.data = myDate;
+				const myLeng = document.getElementById('myLeng').value;
+				e.lingua = myLeng;
+				const myPref = document.getElementById('myPref').value;
+				const myNum = document.getElementById('myNum').value;
+				e.numero = myPref+myNum;
+				
+				
+					
+				if(e.name == '' ||e.cognome == '' ||e.sesso == '' ||e.data == '' ||
+					e.lingua == '' ||e.numero == ''){
+					alert('errore');	
+				}else{
+					register.push(e);
+				}
+				
+				console.log(e);
+				
+				
+				
+				loadRegister(register);
+			}
+		
+			
+			start();
+		</script>
+		</body>
+	
+</html>
