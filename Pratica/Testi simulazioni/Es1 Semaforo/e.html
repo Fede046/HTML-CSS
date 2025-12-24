@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Es</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            position: absolute;
+
+        }
+
+        header {
+            text-align: left;
+        }
+
+        main {
+            padding: 1rem;
+            color: black;
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+        section {
+            background-color: white;
+            padding: 1rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 3fr 1fr 1fr;
+        }
+
+        section button {
+            width: 50px;
+            height: 50px;
+        }
+
+        @media(max-width:900px) {
+            section {
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/sfondo.jpg">
+    <header>
+        <h1>Piante</h1>
+        <h2>Quanto sono belle le pianete</h2>
+    </header>
+
+    <main>
+        <section>
+            <button>Premi</button>
+            <div>
+                <h3>Faggio</h3>
+                <p>Il faggio è un albero molto grande si può trovare nelle pienure, in collina e vicino alle montagne.
+                    Il faggio è una pianta resuistente ad alte temperature e con un fusto coeso.</p>
+            </div>
+            <div>
+                <p>Altezza: 30 m</p>
+                <p>Tempreatura: 30C</p>
+            </div>
+            <p>Albero</p>
+        </section>
+        <section>
+            <button>Premi</button>
+            <div>
+                <h3>Faggio</h3>
+                <p>Il faggio è un albero molto grande si può trovare nelle pienure, in collina e vicino alle montagne.
+                    Il faggio è una pianta resuistente ad alte temperature e con un fusto coeso.</p>
+            </div>
+            <div>
+                <p>Altezza: 30 m</p>
+                <br>
+                <p>Tempreatura: 30C</p>
+            </div>
+            <p>Albero</p>
+        </section>
+    </main>
+</body>
+
+</html>
